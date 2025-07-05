@@ -1,0 +1,20 @@
+body{
+    display: block;
+    text-align: center;
+}
+#labelid{
+    font-size: 6em; 
+}
+.btn{
+    padding: 10px 20px;
+    color: aliceblue;
+    background-color: rgb(33, 174, 196);
+    border-radius: .5em;
+    padding:0.5em;
+    cursor: pointer;
+    transition :background-color 0.25s;
+    
+}
+.btn:hover{
+    background-color: rgb(25, 126, 126);
+}
