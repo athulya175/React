@@ -40,5 +40,5 @@ myBtn.onclick=function(){
     randomNum3=Math.floor(Math.random()*max)+min
     label1.textContent=randomNum1
     labe2.textContent=randomNum2
-    label3.textContent=randomNum3
+    label3.textContent=random
 }

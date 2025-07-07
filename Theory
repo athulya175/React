@@ -6,3 +6,7 @@ There are 2 ways to accept user input
 2)professional way :html textbox
 
 ! tab
+
+---git push
+git commit -m "Some meaningful work"
+git push
