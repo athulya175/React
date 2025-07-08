@@ -18,3 +18,7 @@ document.getElementById('p2').textContent=`it's price is ${price}`
 // x**=2
  console.log(x)
  
+
+
+
+ 
