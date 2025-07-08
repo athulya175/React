@@ -32,3 +32,7 @@ baground-color ->  hsl
   2nd value ->vertical off set
   3rd vaue->blur value
   4th value->color  to get the symbol of degree--> Alt+0176
+
+2D arrray =multi-dimensional array that stores a matix of data in rows and columns.usefull for games,spreadsheets,or representing images
+
+in 2D array each inner array represts the row and each element in the inner row represents columns,each inner array is seperated by comma
