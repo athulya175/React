@@ -13,5 +13,3 @@ submitid.onclick=function(){
         labelid.textContent="you must have age 18+"
     }
 }
-
-
