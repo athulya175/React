@@ -7,8 +7,9 @@ There are 2 ways to accept user input
 
 ! tab   
 ---git push
-git commit -m "Some meaningful work"
-git push
+git add .            # stages all modified and untracked files
+git commit -m "Array" # commits them with your message
+git push             # pushes to remote (like GitHub)
 
 Method Chaining
 calling one method after another in one continuos line of code
@@ -36,3 +37,8 @@ baground-color ->  hsl
 2D arrray =multi-dimensional array that stores a matix of data in rows and columns.usefull for games,spreadsheets,or representing images
 
 in 2D array each inner array represts the row and each element in the inner row represents columns,each inner array is seperated by comma
+
+spread operator= ... allows an iterable such as an array or string to be expanded into seperate elements(unpacks the elements)
+rest parameters=(...rest)allow a function work with a variable number of argument by bundling them into an array
+spread=expands an array into seperate elements 
+rest = bundles seperate element into an array
