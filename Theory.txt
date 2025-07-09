@@ -44,3 +44,7 @@ spread=expands an array into seperate elements
 rest = bundles seperate element into an array
 spread operator:spreads
 rest:combine
+
+
+Call back function:
+a function that is passed as an argument to another function
