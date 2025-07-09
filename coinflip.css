@@ -1,0 +1,26 @@
+body{
+    text-align: center;
+    background-color: azure;
+}
+#container{
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    box-shadow: 5px 6px 30px rgb(203, 203, 219);
+    border-radius: 10px;
+    margin: auto;
+}
+#btn-id{
+    padding: 10px;
+    margin-top: 70%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(166, 223, 231);
+    cursor: pointer;
+}
+#btn-id:hover{
+    background-color: aqua;
+}
+
+
+
+

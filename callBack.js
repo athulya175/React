@@ -12,12 +12,28 @@
     }
  */         //--->here we sets the call  back fn as the argument of the fn which we has to be called
 
- function sum(callback,x,y){
-    let result=x+y
-    callback(result)
- }
- function display(result){             //The function needs a parameter to receive that value.
-    console.log(result)
- }
- sum(display,1,2)
- 
+
+ /*
+    function sum(callback,x,y){
+        let result=x+y
+        callback(result)
+    }
+    function display(result){             //The function needs a parameter to receive that value.
+        console.log(result)
+    }
+    sum(display,1,2)
+*/
+
+//to display on screen
+
+function sum(callback,x,y){
+        let result=x+y
+        callback(result)
+    }
+    function display(result){             
+        console.log(result)
+    }
+    function displaypage(result){
+    document.getElementById('head').textContent=result
+}
+sum(displaypage,1,2)
