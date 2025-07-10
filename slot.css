@@ -1,0 +1,16 @@
+body{
+    text-align: center;
+    color: rgb(2, 85, 12);
+    background-color: rgb(218, 247, 224);
+}
+#result{
+    padding: 10px 20px;
+    border-radius: 6px;
+    box-shadow: 20px 10px 30px rgba(74, 73, 73, 0.452);
+}
+#container{
+    background-color:  rgb(234, 249, 237);
+    width: 300px;
+    height: 300px;
+    margin:30px auto;
+}
