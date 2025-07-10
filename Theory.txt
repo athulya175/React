@@ -53,3 +53,7 @@ forEach()  : Method used to iterate over the element of an array and apply a spe
 forEach(element,index,array)
 
 map()   :Accepts a callback and applies that function to each element of an  array,then return a new array
+reduce():reduce the elements of an array to a single value
+
+function declaration:Define a reusable block of code that performs a specific  task
+function expression:a way to define functions as values or variable
