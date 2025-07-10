@@ -22,3 +22,9 @@ function square(element){
 numbers.forEach(square)
 
 
+function square1(element,index,array){
+    array[index]=Math.pow(element,2)
+}
+numbers.forEach(square1)
+numbers.forEach(display)
+

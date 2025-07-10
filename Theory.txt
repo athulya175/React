@@ -50,3 +50,6 @@ Call back function:
 a function that is passed as an argument to another function
 
 forEach()  : Method used to iterate over the element of an array and apply a specified function(callback)to  each element
+forEach(element,index,array)
+
+map()   :Accepts a callback and applies that function to each element of an  array,then return a new array
