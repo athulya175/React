@@ -57,3 +57,13 @@ reduce():reduce the elements of an array to a single value
 
 function declaration:Define a reusable block of code that performs a specific  task
 function expression:a way to define functions as values or variable
+
+arrow function = a concise way to write function expression good for simple functions thatyou use only once 
+                  (parameters)=>some code
+
+object=A collection of related properties and / or methods can represent real world object(people,products,places)
+object={key:value,function()}
+
+this : reference to the objectwhere THIS is used(the object depends on the immediate context) person.name=this.name
+
+constructor: speacial method for defining the properties and methods of objeccts
