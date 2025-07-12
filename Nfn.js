@@ -4,7 +4,7 @@
         return sqr
     }
     console.log(square(10))
-    
+
     function a(){
             c()
             function c(){
@@ -13,3 +13,14 @@
         }
         var b=10
         a()
+
+        
+    function a(){
+        var b=10
+        c()
+        function c(){
+        }
+    }
+
+    a()
+    console.log(b) 
