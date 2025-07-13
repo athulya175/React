@@ -1,37 +1,13 @@
+console.log("Start")
+        setTimeout(function(){
+            console.log("callback")
+        }, 5000);
+        console.log("end")
 
-    function square(arg){
-        const sqr=arg*arg 
-        return sqr
-    }
-    console.log(square(10))
-
-    function a(){
-            c()
-            function c(){
-            console.log(b)
-            }
+        //to make 10sec running code
+        let startDate=new Date().getTime()
+        let endDate=startDate
+        while(endDate<startDate+10000){
+            endDate=new Date().getTime()
         }
-        var b=10
-        a()
-
-        
-    function a(){
-        var b=10
-        c()
-        function c(){
-        }
-    }
-
-    a()
-    console.log(b) 
-    
-    setTimeout(function(){
-            console.log("timer")
-        },3000)
-        function x(y){
-            console.log("x")
-        y()
-        }
-        x(function y(){
-            console.log("y")
-        })
+        console.log("while expires")
