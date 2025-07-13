@@ -1,13 +1,28 @@
-console.log("Start")
-        setTimeout(function(){
-            console.log("callback")
-        }, 5000);
-        console.log("end")
-
-        //to make 10sec running code
-        let startDate=new Date().getTime()
-        let endDate=startDate
-        while(endDate<startDate+10000){
-            endDate=new Date().getTime()
+        const radius=[3,1,2,4]
+        const calculateArea=function(radius){
+            const output=[]
+            for(let i=0;i<radius.length;i++){
+                output.push(Math.PI*radius[i]*radius[i])
+            }
+            return output
         }
-        console.log("while expires")
+        console.log(calculateArea(radius))
+
+        const calculateCircumference=function(radius){
+            const output=[]
+            for(let i=0;i<radius.length;i++){
+                output.push(Math.PI*radius[i])
+            }
+            return output
+                
+        }
+        console.log(calculateCircumference(radius))
+
+        const calculateDiameter=function(radius){
+            const output=[]
+            for(let i=0;i<radius.length;i++){
+                output.push(2*radius)
+            }
+            return output
+        }
+        console.log(calculateCircumference(radius))
