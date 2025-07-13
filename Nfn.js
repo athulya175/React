@@ -1,21 +1,9 @@
- const radius=[3,1,2,4]
-
-        const area=function(radius){
-            return Math.PI*radius*radius
-        }
-        const circumference=function(radius){
-            return Math.PI*radius
-        }
-        const diameter=function(radius){
-            return 2*radius
-        }
-        const calculate=function(radius,logic){
-            const output=[]
-            for(let i=0;i<radius.length;i++){
-                output.push(logic(radius[i]))
+function x(){
+            for(var i=1;i<6;i++){
+                function varfn(obj){        //  it happens by  creating a new fn  
+                setTimeout(function(){
+                        console.log(obj)
+                    },obj*1000)   
+                }varfn(i)
             }
-            return output
-        }
-        console.log(calculate(radius,area))
-        console.log(calculate(radius,circumference))
-        console.log(calculate(radius,diameter))
+        }x()
