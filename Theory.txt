@@ -66,4 +66,11 @@ object={key:value,function()}
 
 this : reference to the objectwhere THIS is used(the object depends on the immediate context) person.name=this.name
 
-constructor: speacial method for defining the properties and methods of objeccts
+constructor: speacial method for defining the properties and methods of objects
+
+class: (Es6 feature)Provides a more structured and cleaner way to work with objects compared to traditionaal constructor function 
+ex: static keyword,encapsulation,inheritance
+
+static:keyword that defines properties or methods that belong to a class itsself rather than the objects created from that class(class own anything static,notthe objects)
+
+Inheritance: Allows a new class to inherit properties and methodsbfrom an existing class (parent->child)helps with code resuablity

@@ -14,3 +14,6 @@ for(let y of XOX){
     const pattern=y.join(' ')
     console.log(pattern)
 }
+
+
+
