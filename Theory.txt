@@ -81,3 +81,9 @@ super -> parent
 
 Inheritance means a class (child/subclass) gets the properties and methods of another class (parent/superclass).
 super() is a special function you call inside a child class constructor to call the parent class’s constructor.
+---
+getter = spl method that makes a property readable
+setter = spl method that makes a property writeable
+
+validate and modify a value when reading/writting a property
+----

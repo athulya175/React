@@ -65,4 +65,6 @@
     const zebra=new Fish('Fish',3,32)
    
     console.log(rabbit)
+
+    
     
