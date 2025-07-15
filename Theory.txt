@@ -74,3 +74,10 @@ ex: static keyword,encapsulation,inheritance
 static:keyword that defines properties or methods that belong to a class itsself rather than the objects created from that class(class own anything static,notthe objects)
 
 Inheritance: Allows a new class to inherit properties and methodsbfrom an existing class (parent->child)helps with code resuablity
+
+Super: keyword is used in classes to call the constructor or acces the properties and methods of a parent(superclass)
+this  -> object
+super -> parent
+
+Inheritance means a class (child/subclass) gets the properties and methods of another class (parent/superclass).
+super() is a special function you call inside a child class constructor to call the parent class’s constructor.
