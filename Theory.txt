@@ -91,3 +91,9 @@ validate and modify a value when reading/writting a property
 Destructuring : Extract values from arrays and objects,then assign them to variables in a convenient way
                 []=to perform array Destructuring
                 {}=to perform object Destructuring
+----
+nested objects = object inside of other objects inside of other objects
+                Allows you to represent more complex data structures
+                child object is enclosed by a parent object
+                person{Address{},ContactInfo{}}
+                shoppingCart{keyboard{},mouse{},monitor{}}
