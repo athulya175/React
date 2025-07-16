@@ -97,3 +97,12 @@ nested objects = object inside of other objects inside of other objects
                 child object is enclosed by a parent object
                 person{Address{},ContactInfo{}}
                 shoppingCart{keyboard{},mouse{},monitor{}}
+---------
+sort() =method used to sort element of array in place.
+        sorts elements as string in lexicographic order,not alphabetical
+        lexicographic=(alphabet+numbers+symbols) as string
+---------
+Date objects=objects that contain values that represent dates and times these date objects can be changed and Formatted 
+---------
+closure:  A function defined inside of another function, the inner function has acces to the variables and scope of the outer function.allow for private variable and state maintance used frequently in js frameworks:React,vue,Angular
+---------
