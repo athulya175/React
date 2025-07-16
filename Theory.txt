@@ -87,3 +87,7 @@ setter = spl method that makes a property writeable
 
 validate and modify a value when reading/writting a property
 ----
+
+Destructuring : Extract values from arrays and objects,then assign them to variables in a convenient way
+                []=to perform array Destructuring
+                {}=to perform object Destructuring
