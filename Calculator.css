@@ -1,0 +1,24 @@
+body{
+    font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    
+}
+#maindiv{
+    margin:auto;
+    background-color: aliceblue;
+    text-align: center;
+   width:  500px;
+   height: 300px;
+    box-shadow: 5px 7px 7px 5px rgba(74, 83, 83, 0.164);
+    border-radius: 10px;
+    border-radius: 10px;
+}
+#submit{
+    cursor: pointer;
+    background-color: rgb(149, 210, 249);
+    border: none;
+    padding: 5px 9px;
+    border-radius: 5px;
+}
+#submit:hover{
+     background-color: rgb(93, 176, 228);
+}

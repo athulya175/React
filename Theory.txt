@@ -105,4 +105,20 @@ sort() =method used to sort element of array in place.
 Date objects=objects that contain values that represent dates and times these date objects can be changed and Formatted 
 ---------
 closure:  A function defined inside of another function, the inner function has acces to the variables and scope of the outer function.allow for private variable and state maintance used frequently in js frameworks:React,vue,Angular
+--------
+setTimeout() : function in javascripts that allow you to schedule the execution of a function after an amount if time(milliseconds)
+Times are approximate(variables based on the workload of the javaascript runtime env.)
+                setTimeout(callback,delay)
+                clearTimeout(timeoutId)=can cancel a timeout before it triggers
 ---------
+console.time() = Tool that allows you to measure the time it takes for a section of code or process to execute great for identifying performance"bottlencks
+                  console.log("label")
+                  console.timeEnd("label)
+----------
+
+.toLocaleString()=returns a string with a language sensitive representation of number
+Intl.NnumberFormat()
+
+number.toLocaleString("locale",{options})
+locale--->specify the language(undefined=default set in browser)
+options-->object with formatting options

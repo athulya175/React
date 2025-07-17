@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Calculator.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="maindiv">
+        <h1>Interset Calculator</h1>
+        <labelfor="Amount" id="label">Principal Amount:</label><br>
+        <input type="number" id="prAmount"><br>
+        <label id="label">Interest Rate:</label><br>
+        <input type="number" id="inAmount"><br>
+        <label id="label">Years:</label><br>
+        <input type="number" id="years"><br><br>
+        <button onclick="btn_submit()" type="submit" id="submit">Submit</button><br>
+        <p id="result">Total: <span id="value">$0.00</span></p>
+    </div>
+    <script src="Calculator.js"></script>
+</body>
+</html>
