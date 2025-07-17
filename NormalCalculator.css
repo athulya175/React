@@ -1,0 +1,61 @@
+body{
+    
+    margin: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(211, 214, 214);
+}
+#container{
+  font-family: Arial, Helvetica, sans-serif; 
+  background-color: hsl(0, 0%, 0%, 0.826); 
+  border-radius: 15px;
+  max-width: 500px;
+  overflow: hidden;
+}
+#display{
+    width: 100%;
+    padding: 20px;
+    font-size: 5rem;
+    text-align: left;
+    border: none;
+    background-color:  hsl(0, 0%, 31%);
+    color: white;
+}
+#keys{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);  /* The total width of the grid container is divided equally among the 4 columns.Each column gets 1 fraction of the available width.*/
+    gap: 10px;
+    padding: 25px;
+}
+button{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: none;
+    background-color: hsl(0, 0%, 31%);
+    color: white;
+    font-size:3rem;
+    font-weight:bold ;
+    cursor: pointer;
+}
+button:hover{
+    background-color:hsl(0, 0%, 50%); ;
+}
+button:active{
+   background-color: hsl(0, 0%, 60%);   /* when we click on the button it flashes*/
+}
+.operator{
+    background-color: hsl(39, 100%, 50%);
+}
+.operator:hover{
+    background-color:  hsl(39, 100%, 60%);
+}
+.operator:active{
+    background-color:  hsl(39, 100%, 70%);
+}
+.Delete{
+    grid-column: 4;
+}

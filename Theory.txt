@@ -142,5 +142,28 @@ catch{}   :  Catch and handle any thrown Errors from try{}
 finally{} : (optional) Always executes.Used mostly for clean up 
           close files,close connections,release resources
 
-          
+------------
+DOM =Document Object Module
+     Object{} :that represents the page you see in the web browser and provides you with an Api to interact with it.
+     web browser consrtucts the Dom.
+     when it loads an html document,and structures all the elements in a tree-like representation.
+     javaScript can access the DOM to dynamically change the content,structure, and style of a web page    
+chatgpt:The DOM is a tree-like structure that represents your entire webpage — including HTML elements, text, and attributes — so that JavaScript can interact with it.    
+--------------
 
+element selectors= Methods used to target and manipulate HTML elements they allow you to select one or multiple HTML elements from the DOM(Document Object Model)
+
+1)document.getElementById()--------->element or null
+2)document.getElementsClassName()--->html collection
+3)document.getElementByTagName()---->html collection
+4)document.querySelector()---------->element or null
+5)document.querySelectorAll()------->nodelist 
+----------------------------
+
+DOM Navigation = the process of navigating through the structure of an html document using JavaScript
+  1).firstElementChild
+  2).lastElementChild
+  3).nextElementSibling
+  4).previousElementSibiling
+  5).parentElement
+  6).Children
