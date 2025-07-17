@@ -122,3 +122,25 @@ Intl.NnumberFormat()
 number.toLocaleString("locale",{options})
 locale--->specify the language(undefined=default set in browser)
 options-->object with formatting options
+-------
+ES6 Module=An external file thar contains reusable code that can be imported into other JavaScript files.
+          *Write reusable code for many diffrent apps.
+          *can contain variables,classes,functions.... and more 
+          *Introduced as part of ECMAScript 2015 update
+
+--------
+Synchronous :Executes line by line consecutively in a sequential manner
+              code that waits for an operation to complete
+Asynchronous :Allows multiple operations to be performed concurrently without waiting 
+              Doesn't block the executionflow and allows the program to continue
+              (I/O operations,network request,fetching data)
+              Handled with:callbacks,promises,Async/Await
+Error : An object that is created to represent a problem that occurs
+            Occur often with user i/p or establishing a connection
+try{}     : Enclose code that might potentially cause an Error
+catch{}   :  Catch and handle any thrown Errors from try{}
+finally{} : (optional) Always executes.Used mostly for clean up 
+          close files,close connections,release resources
+
+          
+
