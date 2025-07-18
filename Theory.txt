@@ -167,3 +167,10 @@ DOM Navigation = the process of navigating through the structure of an html docu
   4).previousElementSibiling
   5).parentElement
   6).Children
+
+-----------------------------
+Add and change html using javaScript
+Step1:Create the element
+step2:Add attributes/properties
+step 3:Append element to DOM
+step 4:remove html element
