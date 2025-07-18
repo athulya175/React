@@ -35,3 +35,39 @@
 */
 
 //------------------------3).nextElementSibling--------
+/*
+    const element=document.getElementById("fruits")
+    const nxtsib=element.nextElementSibling
+    nxtsib.style.backgroundColor="pink"
+
+    //highlight all siblings
+    const element=document.querySelectorAll("ul")
+    element.forEach(x=>{
+        const allsiblings=x.nextElementSibling
+        allsiblings.style.backgroundColor="red"
+    })
+*/
+
+//----------------------- 4).previousElementSibiling-----
+/*
+    const element=document.getElementById("desserts")
+    const prevsibls=element.previousElementSibling
+    prevsibls.style.backgroundColor="red"
+*/
+
+//--------------------------  5).parentElement---------
+/*
+    const parent=document.getElementById("milk")
+    const parentis=parent.parentElement
+    parentis.style.backgroundColor="yellow"
+*/
+
+//--------------------- 6).Children-------------------
+
+const element=document.getElementById("desserts")
+const children=element.children
+children[1].style.backgroundColor="green"
+// console.log(children)
+// Array.from(children).forEach(child=>{
+//     child.style.backgroundColor="yellow"
+// })
