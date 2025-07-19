@@ -181,3 +181,10 @@ eventListner =Listner for specific events to create interactive web pages
               .addEventListner(event,callback)
 
 😌winows+.
+
+
+NodeList=static collection of html elemets by(id,class,element)
+        can be created by using querySelectorAll()
+        similar to an array,but no(map,filter,reduce)
+        nodelist won't update to automatically reflect changes
+        /
