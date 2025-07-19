@@ -14,3 +14,21 @@ myBox.addEventListener("click",changeclr)       //we dont need to add the argume
         event.target.textContent="Clicked👌"
     })
 */
+
+
+myBox.addEventListener("mouseover",event=>{
+    event.target.style.backgroundColor="pink"
+    event.target.textContent="ouch!"
+})
+
+myBox.addEventListener("mouseout",event=>{
+    event.target.style.backgroundColor="green"
+    event.target.textContent="yooouh!"
+})
+
+//---------------Button----------
+
+const clickbtn=document.getElementById("clk-btn")
+clickbtn.addEventListener("mouseover",event=>{
+    event.target.style.backgroundColor="green"
+})
