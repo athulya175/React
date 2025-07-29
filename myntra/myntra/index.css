@@ -1,0 +1,322 @@
+@font-face{
+        src: url('Font/Assistant-Bold.woff2');
+        font-family: Bold;
+}
+@font-face{
+    src: url('Font/Assistant-Regular.woff2');
+    font-family: Regular;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0px;
+    color: #424553;
+}
+#arrow{
+    display: inline;
+}
+
+#head-id{
+    background-color: white;
+    /* position: fixed; */
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+}
+#img1{
+    display: inline-block;
+    margin: 16px;
+    vertical-align: top;
+}
+
+#Mylogo{
+    display: inline-block;
+    vertical-align: top;
+    width: 24px;
+    height: 24px;
+    margin: 16px 16px 16px 0;
+}
+#head-text{
+    top: 11px;
+    font-size: 16px;
+    vertical-align: top;
+    position: relative;
+    position: relative;
+    font-family: Regular;
+    white-space: nowrap;
+    width: 115px;
+    display: inline-block;
+}
+.hd-text{
+    font-family: Bold;
+}
+.hd-subtxt{
+    font-size: 12px;
+    font-weight: 400;
+    font-family:Regular;
+}
+#headicons{
+    top: 1px;
+    float: right;
+    display: flex;
+    margin-left: 4px;
+   
+}
+#plus{
+    width: 26.67px;
+    height: 26.67px;
+}
+#headicons img:first-child{
+    width: 20px;
+    height: 20px;
+    margin-top: 18px;
+}
+#hdicon{
+
+    position: relative;
+    height: 22px;
+    margin: 17px 16px 16px 0;
+    width: 24px;
+    height: 24px;
+}
+#headicons img:nth-child(2){
+    margin-left: 4px;
+}
+#headicons img:nth-child(n+2){
+    top:-1px;
+}
+#banner{
+    z-index: 100;
+    padding: 12px 6px;
+    background-image: linear-gradient(90deg, #bd6da6, #d799cb);
+    font-family: Regular;
+    margin-top: -1px;
+}
+#banner-txt{
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    line-height: 1.4;
+    margin-top: 1px;
+}
+#bntxt{
+    font-family: Bold;
+}
+#items{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#item{
+    width: 100%;
+    border-right: 0.5px solid #d4d5d9;
+    border-top: 1px solid #d4d5d9;
+    float: left;
+    width: 50%;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+}
+#lstimg{
+    position: relative;
+    display: block;
+    max-width:100%;
+   height: auto;
+}
+#ratings{
+    position: absolute;
+    height: 18px;
+    margin: -28px 0 0 11px;
+    border: 1px solid #eaeaec;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 5px;
+    border-radius: 9px;
+    width: auto;
+}
+#ratingtxt{
+    display: block;
+    font-size: 10px;
+    font-family: Bold;
+}
+#star{
+    background-image: url("https://constant.myntassets.com/pwa/assets/img/2bce8a2b-e1d5-465a-8980-62f3d778377c1548353615799-Fill-90-Copy-7.png");
+    padding: 3px;
+    font-size: 9px;
+    background-size: cover;
+    position: relative;
+    margin: 0 6px 0 4px;
+    width: 6px;
+    height: 6px;
+}
+#line{
+    color: rgb(148,150,159);
+}
+#raitingcnt{
+    font-size: 10px;
+    font-family: Bold;
+    margin-left: 5px;
+}
+#pdt-dtls{
+    position: relative;
+}
+#pdts{
+    padding: 8px 0;
+    font-size: 12px;
+}
+#pdtnme{
+    margin: 0;  
+    padding-left: 8px;
+    font-weight: normal;
+    font-family: Bold;
+    line-height: 1.57;
+    text-align: left;
+    color: #282c3f;
+    font-size: 13px;
+    width: 85%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#pdtdec{
+    opacity: .6;
+    padding-left: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+    margin: 0;
+    font-size: 11px;
+    font-weight: 400;
+    font-family: Regular;
+    text-align: left;
+    color: #282c3f;
+    height: 12px;
+}
+#pdtrate{
+    margin-top: -1px;
+    padding-left: 6px;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#priceicn{
+    font-weight: 700;
+    color: #282c3f;
+    font-size: 13px;
+    position: relative;
+    top: 4px;
+}
+#price{
+    position: relative;
+    left: -2px;
+    font-family: Bold;
+    font-size: 13px;
+    color: #282c3f;
+    margin-left: -3px;
+}
+#stricn{
+    font-size: 13px;
+    opacity: .4;
+    color: #282c3f;
+    text-decoration: line-through;
+    position: relative;
+    top: 1px;
+}
+#strprice{
+     font-size: 13px;
+    opacity: .4;
+    color: #282c3f;
+    text-decoration: line-through;
+    position: relative;
+    margin-left: -3px;
+    font-family: Regular;
+}
+#dispercent{
+    color: #ff905a;
+    font-family: Bold;
+    font-size: 11px;
+    white-space: nowrap;
+}
+#spacing{
+    min-height: 17px;
+    text-align: left;
+    margin-left: 8px;
+}
+
+#wished{
+    color: #282c3f;
+    display: inline-block;
+    position: absolute;
+    bottom: 43px;
+    right: 0;
+    top:2px;
+    padding-top: 4px;
+    padding-left: 15px;
+    height: 38px;
+}
+#filtersrt{
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    width: 100%;
+    border-top: 1px solid #eaeaec;
+    z-index: 10;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#sort{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+#sortbtn{
+    /* border-color: transparent; */
+    background-color: #fff;
+    width: 100;
+    height: 50px;
+    padding: 14px 0 14px 28px;
+    font-size:14px;
+    letter-spacing:0.9px;
+    color: #535766;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    outline: 0;
+    padding: 10px 12px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    
+}
+#srttxt{
+    position: relative;
+    overflow: hidden;
+}
+#fltsimg{
+    top: 16px;
+    left: 10%;
+    position: absolute;
+}
+ @media screen and (max-width:375px){
+    #lstimg{
+        height: 255px;
+    }
+}

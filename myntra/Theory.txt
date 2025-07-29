@@ -1,0 +1,14 @@
+-----------HTML--------------
+for some plane text type :lorem + tab
+<hr> tag to make a horizontal row(it came across with a line)
+<pre></pre>  this tag makes when we enter some  paragraph and inside the html if we use extra line space that will reflect in our webpage
+
+------Links------
+target=_blank ---> the page is opened in a new tab
+title ="some text"-->when we hover the mouse it should show the text on that
+mailto --->can make mail 
+wrap image tag into a <a> </a> then we can use the image as a link 
+To add audio use <audio contols><source src="path of audio"></audio>
+and also we can use "muted" property in the audio tag so it muted and only unmuted when user clicks the mute button
+also add loop so the song will goes to continues playing
+when we give width for vedio it should be in the <vedio> tag   
