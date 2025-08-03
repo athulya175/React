@@ -499,6 +499,14 @@ const fltr=document.getElementById("fltothr").addEventListener("click",function(
                 </div>
             </div>
         </div>
+    
+        <div class="filters">
+            <div class="clm2">
+                <p class="titles">Refine your search</p>
+                <p class="description">Select any one category to view more filter(s)</p>
+                <div class="sltctry">SELECT CATEGORY</div>
+            </div>
+        </div>
 
         <div class="color">
             <div class="clm2">
@@ -695,42 +703,42 @@ const fltr=document.getElementById("fltothr").addEventListener("click",function(
                         <li class="clm2li">
                             <label class="cstmcheckbox">
                                 <input type="checkbox" name="clm2fil" value="girls"class="chkbox">
-                                <div class="chkboxIndicator"></div>28 moons
+                                <div class="chkboxIndicator"></div>India
                                 <span class="pdtcount">23</span>
                             </label>
                         </li>    
                         <li class="clm2li">
                             <label class="cstmcheckbox">
                                 <input type="checkbox" name="clm2fil" value="girls"class="chkbox">
-                                <div class="chkboxIndicator"></div>3pin
+                                <div class="chkboxIndicator"></div>Indonesia
                                 <span class="pdtcount">18</span>
                             </label>
                         </li>    
                         <li class="clm2li">
                             <label class="cstmcheckbox">
                                 <input type="checkbox" name="clm2fil" value="girls"class="chkbox">
-                                <div class="chkboxIndicator"></div>4wrd by dressberry
+                                <div class="chkboxIndicator"></div>Italy
                                 <span class="pdtcount">56</span>
                             </label>
                         </li>    
                         <li class="clm2li">
                             <label class="cstmcheckbox">
                                 <input type="checkbox" name="clm2fil" value="girls" class="chkbox">
-                                <div class="chkboxIndicator"></div>4you dresses
+                                <div class="chkboxIndicator"></div>Mauritius
                                 <span class="pdtcount">13</span>
                             </label>
                         </li>    
                         <li class="clm2li">
                             <label class="cstmcheckbox">
                                 <input type="checkbox" name="clm2fil" value="girls"class="chkbox">
-                                <div class="chkboxIndicator"></div>5.10.15
+                                <div class="chkboxIndicator"></div>Moroco
                                 <span class="pdtcount">1</span>
                             </label>
                         </li>    
                         <li class="clm2li">
                             <label class="cstmcheckbox">
                                 <input type="checkbox" name="clm2fil" value="girls"class="chkbox">
-                                <div class="chkboxIndicator"></div>612 ivy league
+                                <div class="chkboxIndicator"></div>Myanmar
                                 <span class="pdtcount">1</span>
                             </label>
                         </li>    
@@ -739,10 +747,7 @@ const fltr=document.getElementById("fltothr").addEventListener("click",function(
                 </ul>
             </div>
         </div>
-
-
-
-            <div class="lastnav">
+        <div class="lastnav">
                     <div class="navclm">
                         <div class="navclmcnt">
                             <button class="close_btn">CLOSE</button>
@@ -764,8 +769,9 @@ const fltr=document.getElementById("fltothr").addEventListener("click",function(
             filtrpge.remove()
         } 
         
-    // document.querySelector(".filterbtn").onclick = () => {
-    //     document.querySelector(".sorting").style.display = "block";
+        
+    // document.getElementById("#filtbtn").onclick = () => {
+    //     document.querySelector("#flrt-id").style.display = "block";
     // };
 
         filtrpge.querySelectorAll(".clm1flx").forEach(clm1flx=>{
@@ -776,7 +782,7 @@ const fltr=document.getElementById("fltothr").addEventListener("click",function(
         console.log(labeltxt)
 
 
-     filtrpge.querySelectorAll(".gender, .categories,.size,.price,.brand,.discount,.bundles.country").forEach(section => {
+     filtrpge.querySelectorAll(".gender, .categories,.size,.price,.brand,.discount,.bundles,.country,.filters,.color").forEach(section => {
     section.style.display = "none";
     });
 
@@ -803,6 +809,12 @@ const fltr=document.getElementById("fltothr").addEventListener("click",function(
      }
        else if(labeltxt==="Country of Origin"){
         filtrpge.querySelector(".country").style.display="block"
+     }
+      else if(labeltxt==="Color"){
+        filtrpge.querySelector(".color").style.display="block"
+     }
+      else if(labeltxt==="More Filters"){
+        filtrpge.querySelector(".filters").style.display="block"
      }
     })
     })

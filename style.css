@@ -304,7 +304,7 @@ body{
     position: relative;
     overflow: hidden;
 }
-#sortbtn{
+.sortbtn{
     /* border-color: transparent; */
     font-family: Bold;
     background-color: #fff;
@@ -324,6 +324,26 @@ body{
     outline: 0;
     font-size: 14px;
     line-height: 1.42857143;   
+}
+.filtbtn{
+     font-family: Bold;
+    background-color: #fff;
+    width: 100;
+    height: 50px;
+    padding: 14px 0 14px 28px;
+    letter-spacing:0.9px;
+    color: #535766;
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    outline: 0;
+    font-size: 14px;
+    line-height: 1.42857143; 
 }
 #fltsimg{
     top: 16px;
@@ -802,6 +822,90 @@ display: flex;
     display: inline-block;
     margin-left: 36px;
 }
+.lastnav{
+    border-top: 1px solid #eaeaec;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    margin: 0;
+}
+.navclm{
+    width: 50%;
+    float: left;
+    padding-right: 16px;
+}
+.navclmcnt{
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+}
+.close_btn{
+    color: #3e4152;
+    border-color: transparent;
+    background-color: #fff;
+    height: 50px;
+    font-size: 14px;
+    font-family: Regular;
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: 10px 12px;
+    line-height: 1.42857143;
+}
+.btn_sep{
+    border-left: 1px solid #eaeaec;
+    width: 2px;
+    height: 22px;
+    position: absolute;
+    left: 50%;
+    top: 15px;
+    z-index: 1;
+}
+.applay_btn{
+    color: #ff3e6c;
+    border-color: transparent;
+    background-color: #fff;
+    height: 50px;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    font-family: Bold;
+    padding: 10px 12px;
+    line-height: 1.42857143;   
+    margin-left: 16px;
+
+}
+.titles{
+    font-family: Bold;
+    text-align: center;
+    margin: 50px 0 8px;
+    font-size: 14px;
+    color: #535766;
+}
+.description{
+    text-align: center;
+    padding: 0 20px;
+    color: #535766;
+    font-family: Regular;
+    font-size: 12px;
+}
+.sltctry{
+    font-family: Bold;
+    font-size: 12px;
+    border-radius: 4px;
+    border: 1px solid #ff3e6c;
+    text-align: center;
+    width: 76%;
+    margin: 24px 12%;
+    padding: 6px 0;
+    color: #ff3e6c;
+
+}
+
  @media screen and (max-width:375px){
     #lstimg{
         height: 255px;
