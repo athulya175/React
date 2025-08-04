@@ -461,23 +461,6 @@ function filterFn(){
                 </ul>
             </div>
         </div>
-
-        <div class="price">
-            <div class="clm2">
-                <div class="price">
-                    <div class="pricerng">
-                        <div class="pricemrg"> 
-                            <div class="priceinfo">
-                                <div class="pricetxt">Selected price range</div>
-                                    <div class="pricebold">₹0-₹42,000</div>
-                                    <div class="pdtnumber">270506 product found</div>
-                                    
-                            </div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     
         <div class="filters">
             <div class="clm2">
@@ -620,6 +603,30 @@ function filterFn(){
                 </ul>
             </div>
         </div>
+            <div class="price">
+                <div class="clm2">
+                    <div class="setrange">
+                        <div class="price-filter">
+                            <div class="price-info">
+                                <div class="pricehd">Selected price range</div>
+                                    <div class="price-range"><span id="min-price">₹0</span> - <span id="max-price">₹21,000</span></div>
+                                        <div class="product-count"><span id="nopdts">269005 products found</span></div>
+                                </div>
+                                <div class="cont">
+                                    <div class="histo">
+                                        <div class="hist1"></div>
+                                            <div class="hist2"></div>
+                                                <div class="hist3"></div>
+                                    </div>
+                                </div>
+                                <div class="slider-container">
+                                    <input type="range" id="maxRange" min="0" max="21000" step="100" value="21000">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <div class="country">
             <div class="clm2">
             <div class="searsize">
@@ -755,7 +762,17 @@ function filterFn(){
         const labeltxt=this.querySelector("label").textContent.trim()
         console.log(labeltxt)
 
+            const maxRange = document.getElementById('maxRange');
+        const maxPrice = document.getElementById('max-price');
 
+function updateSlider() {
+  const val = parseInt(maxRange.value);
+  maxPrice.textContent = `₹${val.toLocaleString()}`;
+  maxRange.style.setProperty('--value', `${(val / maxRange.max) * 100}%`);
+}
+
+maxRange.addEventListener('input', updateSlider);
+updateSlider();
      filtrpge.querySelectorAll(".gender, .categories,.size,.price,.brand,.discount,.bundles,.country,.filters,.color").forEach(section => {
     section.style.display = "none";
     });
@@ -805,7 +822,11 @@ const filterbutton=document.querySelector(".filtbtn")
 fltr.addEventListener("click",filterFn)
 filterbutton.addEventListener("click",filterFn)
 
-
+// const selectcategory=document.querySelector(".sltctry")
+// selectcategory.addEventListener("click",function(){
+//     console("Select")
+//     querySelector(".categories").style.display="block"
+// })
 
 const sortbtn=document.querySelector(".sortbtn")
 sortbtn.addEventListener("click",()=>{
@@ -879,39 +900,6 @@ sortpge.querySelector(".sorting").onclick=()=>{
         sortpge.remove()
     }
 })
-// const getMyntra=document.querySelector(".getmyntra")
-// function getMyntraApp(){
-//     const Mynrapp=document.createElement("div")
-//     Mynrapp.id="mynraid"
-//     Mynrapp.innerHTML=`
-//     <div id="overlay">
-//         <div id="model">
-//             <p class="alrttit">Open Xdg-open?</p>
-//             <p class="alrtdesc">https://myntra.onelink.me wants to open this application.</p>
-//             <label class="alrtchkbx"><input type="checkbox" id="allow"> Always allow myntra.onelink.me to open links of this type in the associated app</label>
-//             <div class="alrtbtn">
-//                 <button onclick="hide()" class="cancel-btn">Cancel</button>
-//                 <button onclick="seek()" class="open-btn">Open Xdg-open</button>
-//             </div>
-//         </div>
-//     </div>`
-//     document.body.appendChild(Mynrapp)
-//     document.getElementById("overlay").style.display="flex"
-// }
-
-// function hide() {
-//   const modal = document.getElementById("mynraid");
-//   if (modal) modal.remove();
-// }
-
-// function seek() {
-//   const checked = document.getElementById("allow").checked;
-//   alert("Opening xdg-open\nRemember choice: " + (checked ? "Yes" : "No"));
-//   hide();
-// }
-    
-
-// getMyntra.addEventListener("click",getMyntraApp)
 
 
 const wished=document.getElementById("wish")
