@@ -53,7 +53,8 @@ const showpg=document.querySelector(".hdicon").addEventListener("click",function
 })
 
 
-const fltr=document.getElementById("fltothr").addEventListener("click",function(){
+const fltr=document.getElementById("fltothr")
+function filterFn(){
     const filtrpge=document.createElement("div")
     filtrpge.id="flrt-id"
     filtrpge.innerHTML=`
@@ -825,12 +826,17 @@ const fltr=document.getElementById("fltothr").addEventListener("click",function(
     this.classList.add("clm1flxclr");
   });
 });
+}
+
+const filterbutton=document.querySelector(".filtbtn")
+fltr.addEventListener("click",filterFn)
+filterbutton.addEventListener("click",filterFn)
 
 
-})
 
-const sortbtn=document.getElementById("sortbtn")
+const sortbtn=document.querySelector(".sortbtn")
 sortbtn.addEventListener("click",()=>{
+    // console.log("sort")
     const sortpge=document.createElement("div")
     sortpge.id="srtid"
     sortpge.innerHTML=
@@ -840,7 +846,7 @@ sortbtn.addEventListener("click",()=>{
             <div class="popcont">
                 <ul class="sortlst">
                     <li class="srtby">SORT BY </li>
-                    <span >
+                    <span>
                         <li class="poplst">
                             <div class="srtlst">
                             <button class="srtbtn">
@@ -860,7 +866,7 @@ sortbtn.addEventListener("click",()=>{
                         <li class="poplst">
                             <div class="srtlst">
                             <button class="srtbtn">
-                            <img src="icons/discount.png"class="sortsvg"> 
+                            <img src="icons/discount.png"class="sortsvg1"> 
                             <span class="srtpoptxt">Discount</span> 
                             </button>
                             </div>
@@ -868,16 +874,16 @@ sortbtn.addEventListener("click",()=>{
                         <li class="poplst">
                             <div class="srtlst">
                             <button class="srtbtn">
-                            <img src="icons/pricedwn.svg"class="sortsvg"> 
-                            <span class="srtpoptxt">Price:High to Low</span> 
+                            <img src="icons/pricedwn .svg"class="sortsvg"> 
+                            <span class="srtpoptxt">Price: High to Low</span> 
                             </button>
                             </div>
                         </li>
                         <li class="poplst">
                             <div class="srtlst">
                             <button class="srtbtn">
-                            <img src="icons/priceup.svg"class="sortsvg"> 
-                            <span class="srtpoptxt">Price:Low to High</span> 
+                            <img src="icons/priceup .svg"class="sortsvg"> 
+                            <span class="srtpoptxt">Price: Low to High</span> 
                             </button>
                             </div>
                         </li>
@@ -900,8 +906,59 @@ sortpge.querySelector(".sorting").onclick=()=>{
         sortpge.remove()
     }
 })
+// const getMyntra=document.querySelector(".getmyntra")
+// function getMyntraApp(){
+//     const Mynrapp=document.createElement("div")
+//     Mynrapp.id="mynraid"
+//     Mynrapp.innerHTML=`
+//     <div id="overlay">
+//         <div id="model">
+//             <p class="alrttit">Open Xdg-open?</p>
+//             <p class="alrtdesc">https://myntra.onelink.me wants to open this application.</p>
+//             <label class="alrtchkbx"><input type="checkbox" id="allow"> Always allow myntra.onelink.me to open links of this type in the associated app</label>
+//             <div class="alrtbtn">
+//                 <button onclick="hide()" class="cancel-btn">Cancel</button>
+//                 <button onclick="seek()" class="open-btn">Open Xdg-open</button>
+//             </div>
+//         </div>
+//     </div>`
+//     document.body.appendChild(Mynrapp)
+//     document.getElementById("overlay").style.display="flex"
+// }
+
+// function hide() {
+//   const modal = document.getElementById("mynraid");
+//   if (modal) modal.remove();
+// }
+
+// function seek() {
+//   const checked = document.getElementById("allow").checked;
+//   alert("Opening xdg-open\nRemember choice: " + (checked ? "Yes" : "No"));
+//   hide();
+// }
+    
+
+// getMyntra.addEventListener("click",getMyntraApp)
 
 
-
+const wished=document.getElementById("wish")
+function wishlisted(){
+    wished.style.display="block"
+    const box=document.createElement("div")
+    box.id="wishboxid"
+    box.innerHTML=`
+    <div id="wishlistbox" class="wsbox">
+        <div class="wishpop">
+            <p>Product added to wishlist</p>
+        </div>
+    </div>
+    `
+document.body.appendChild(box)
+setTimeout(() => {
+    box.remove()
+}, 2000);
+}
+const redwish=document.getElementById("wished")
+redwish.addEventListener("click",wishlisted)
 
    

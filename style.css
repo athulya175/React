@@ -15,6 +15,7 @@ html, body {
 }
 
 body{
+    width: 100%;
     margin: 0;
     padding: 0px;
     color: #424553;
@@ -25,8 +26,8 @@ body{
 
 #head-id{
     background-color: white;
-    /* position: sticky; */
-    /* top: 0; */
+    position: fixed;
+    top: 0;
     z-index: 100;
     width: 100%;
     display: flex;
@@ -71,6 +72,7 @@ body{
     display: flex;
     margin-left: 4px;
     width: 100%;
+    margin-bottom: -5px;
    
 }
 #headicons > img.hdicon{
@@ -78,6 +80,7 @@ body{
     height: 20px;
     margin-top: 18px;
 }
+
 .hdicon{
   position: relative;
     margin: 17px 16px 16px 0;
@@ -88,16 +91,19 @@ body{
 #headicons a:nth-child(2){
     margin-left: 4px;
 }
+#headicons a:nth-child(n+1){
+        margin-top: -1px;
+}
 .hdicon:not(:first-of-type) {
     top: 10px;
     position: relative;
 }
 #banner{
+    margin-top: 56px !important;
     z-index: 100;
     padding: 12px 6px;
     background-image: linear-gradient(90deg, #bd6da6, #d799cb);
     font-family: Regular;
-    margin-top: -6px;
     margin-bottom: -1px;
 }
 #banner-txt{
@@ -109,6 +115,7 @@ body{
 }
 #bntxt{
     font-family: Bold;
+    /* margin-top: 3px; */
 }
 #items{
     list-style: none;
@@ -274,6 +281,18 @@ body{
 #wished{
     color: #282c3f;
     display: inline-block;
+    position: absolute;
+    bottom: 43px;
+    right: 0;
+    top:2px;
+    padding-top: 4px;
+    padding-left: 15px;
+    height: 38px;
+}
+
+#wish{
+    color: #282c3f;
+    display: none;
     position: absolute;
     bottom: 43px;
     right: 0;
@@ -905,10 +924,134 @@ display: flex;
     color: #ff3e6c;
 
 }
+.sortpop{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+    background-color: #00000080;
+    z-index: 200;
+    width: 100vh;
+    height: 100vh;
+}
+.posvis{
+    bottom: 0;
+    transform: none;
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    height: auto;
+    max-height: 100%;
+}
+.popcont{
+    background-color: #fff;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+     height: 329.38px;
+}
+.sortlst{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    overflow: hidden;
+    clear: both;
+    /* line-height: 1.42857143; */
+    line-height: 1.15;
+}
+.srtby{
+   border-bottom: 1px solid #eaeaec;
+   font-family: Bold;
+   font-size: 14px;
+   color: #3e4152;
+   padding-left: 10px;
+   margin: 0 10px;
+   padding-top: 12px; 
+   padding-bottom: 8px;
+}
+.poplst{
+    margin: 15px auto;
+}
+.srtlst{
+    position: relative;
+    overflow: hidden;
+}
+.srtbtn{
+    width: 100%;
+    display: inline-block;
+    border: none;
+    text-transform: none;
+    text-align: left;
+    color: #3e4152;
+    background: #fff;
+    /* padding: 7.5px 0; */
+}
+.sortsvg{
+    width: 24px;
+    height: 24px;
+    float: left;
+    position: relative;
+    top:5px;
+    right: -17px;
 
+}
+.sortsvg1{
+    width: 18px;
+    height: 18px;
+    float: left;
+    position: relative;
+    top:5px;
+    right: -17px;
+}
+.srtpoptxt{
+    padding: 7.5px 0;
+    position: absolute;
+    width: 28%;
+    top: 0;
+    font-size: 14px;
+    left: 65px;
+    white-space: nowrap;
+    font-family: Regular;
+}
+.wsbox{
+    display: block;
+    position: fixed;
+    top:9%;
+    left:50%;
+    transform:translate(-50%,-20%);
+    color: white;
+    border: 2px solid #444;
+    background-color: #444;
+    padding: 5px;
+    z-index: 9999;
+    /* box-shadow: 0 5px rgba(0,0,0,0.3); */
+    white-space: nowrap;
+    /* width: fit-content; */
+    border-radius: 5px;
+    font-family: Bold;
+    font-size:12px ;
+
+}
+.wsbox p{
+    margin: 0;
+}
+#sprt{
+    border-left: 1px solid #eaeaec;
+    width: 1px;
+    height: 22px;
+    z-index: 1;
+}
  @media screen and (max-width:375px){
     #lstimg{
         height: 255px;
+    }
+      #pdts{
+        height: 86.97px;
     }
 }
 @media screen and (max-width:425px)and (min-width:376px){
@@ -929,8 +1072,9 @@ display: flex;
     overflow: hidden;
     }
     #item{
-        height: 343.97;
+        height: 343.97px;
     }
+  
 }
 @media screen and (max-width:768px) and (min-width:426px){
 
