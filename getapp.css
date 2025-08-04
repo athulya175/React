@@ -47,8 +47,15 @@ body{
 .cancel-btn{
     background-color: #944b58;
     color: white;
+    padding: 10px;
+    border-radius: 50px;
+    border: 4px double;
+
 }
 .open-btn{
     background-color: #fce9ec;
     color: #944b58;
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
 }
