@@ -809,6 +809,15 @@ updateSlider();
      }
     })
     })
+
+    const selectcategory=document.querySelector(".sltctry")
+    selectcategory.addEventListener("click",function(){
+    console.log("clicked")
+    filtrpge.querySelector(".categories").style.display="block"
+    
+    })
+
+
  filtrpge.querySelectorAll("#clm1 .clm1flx").forEach(clm1tit => {
   clm1tit.addEventListener("click", function () {
     console.log("clk");
@@ -822,11 +831,6 @@ const filterbutton=document.querySelector(".filtbtn")
 fltr.addEventListener("click",filterFn)
 filterbutton.addEventListener("click",filterFn)
 
-// const selectcategory=document.querySelector(".sltctry")
-// selectcategory.addEventListener("click",function(){
-//     console("Select")
-//     querySelector(".categories").style.display="block"
-// })
 
 const sortbtn=document.querySelector(".sortbtn")
 sortbtn.addEventListener("click",()=>{
@@ -922,4 +926,32 @@ setTimeout(() => {
 const redwish=document.getElementById("wished")
 redwish.addEventListener("click",wishlisted)
 
-   
+function addToCart(){
+   const addtocart= document.createElement("div")
+   addtocart.id="cartid"
+   addtocart.innerHTML=`
+   <div class="layout">
+    <div class="cartnav">
+        <div class="bkicon">
+            <img src="icons/arrow_icon.svg" id="img1" />
+        </div>
+            <div class="carthd">SHOPPING BAG</div>
+            <div class="step">STEP 1/3</div>
+        </div>
+        <div class="root">
+        <div id="cartmob">
+        <div id="cartcntmrg">
+            <div class="cart img"><img src="https://constant.myntassets.com/checkout/assets/img/empty-bag.webp"></div>
+        </div>
+        <div class="carttitle">Hey,it feel so light!</div>
+        <div class="cartsubtile">There is nothing in your bag.Let's add some items.</div>
+        <div class="addingcart">
+                <div class="cartbutton">ADD ITEMS FROM WISHLIST</div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    `
+    
+}
