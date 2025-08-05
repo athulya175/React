@@ -140,7 +140,7 @@ body{
     position: relative;
     display: block;
     width:100%;
-   height: auto;
+    height: auto;
 }
 #ratings{
     position: absolute;
@@ -485,14 +485,14 @@ body{
 /*--------------------------------------JS------------------------*/
 
  #show-id {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-     background-color: rgba(40, 44, 63, .9);
-  z-index: 1000;
-  opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(40, 44, 63, .9);
+    z-index: 1000;
+    opacity: 1;
 }
 
  .show-pge{
@@ -554,6 +554,7 @@ body{
     font-size: 16px;
     font-family: Bold;
     padding: 42px 0 10px;
+    margin-top: -2px;
  }
  .instrns{
     margin: 0;
@@ -561,6 +562,17 @@ body{
     font-size: 14px;
     line-height: 1.29;
     font-family: Regular;
+ }
+ #one{
+    position: absolute;
+    top: 278px;
+ }#two{
+    position: absolute;
+    top:302px;
+ }
+ #wky-btn{
+   position: fixed;
+   top:326px;
  }
  .gotit{
     position: relative;
@@ -585,9 +597,23 @@ body{
     background-image: none;
     border: 1px solid transparent;
     white-space: nowrap;
-    outline:0
+    outline:0;
+    font-family: Bold;
  }
-
+#titl1{
+    position: absolute;
+    top: 117px;
+    left: 65px;
+}
+#titl2{
+    position: absolute;
+    top:150px
+}
+#titl3{
+    position: absolute;
+    top: 183px;
+    left: 64px;
+}
  .filpage{
     width: 100%;
     height: 100%;
@@ -635,7 +661,7 @@ body{
     overflow: hidden;
  }
  .clm1flx{
-       background: #f5f5f6;
+    background: #f5f5f6;
     font-family: Regular;
     font-size: 14px;
     border-bottom: 1px solid #eaeaec;
@@ -709,17 +735,16 @@ body{
      
 }
  .chkboxIndicator::before{
-     content: "";
+    content: "";
     position: absolute;
     top: 4px;
     left: 4px;
     width: 8px;
     height: 5px;
-       border-color: #bfc0c6;
-   border-style: none none solid  solid;
-   border-width: 1px;
-   display: block;
-
+    border-color: #bfc0c6;
+    border-style: none none solid  solid;
+    border-width: 1px;
+    display: block;
     transform: rotate(-45deg);
 } 
 .chkboxIndicator::after{
@@ -729,15 +754,14 @@ body{
     left: 4px;
     width: 8px;
     height: 5px;
-   border: #ff3e6c;
-   border-style: none none solid  solid;
-   border-width: 2px;
-   display: none;
-
+    border: #ff3e6c;
+    border-style: none none solid  solid;
+    border-width: 2px;
+    display: none;
     transform: rotate(-45deg);
 }
 .cstmcheckbox input:checked + .chkboxIndicator::after {
-  display: block;
+    display: block;
 }
 .pdtcount{
     position: absolute;
@@ -757,8 +781,8 @@ body{
     align-items: center;
 } */
 .clm1flxclr {
-  background-color:#fff;
-  font-family: Bold;
+    background-color:#fff;
+    font-family: Bold;
 }
 .searsize{
     position: relative;
@@ -928,7 +952,7 @@ body{
     background-color: #fff;
     overflow-y: auto;
     scroll-behavior: smooth;
-     height: 329.38px;
+    height: 329.38px;
 }
 .sortlst{
     list-style: none;
@@ -1055,7 +1079,7 @@ body{
     margin-left: 12px;
 }
 .price-info {
-  margin: 16px;
+    margin: 16px;
 }
 .pricehd{
     color: #282c3f;
@@ -1064,63 +1088,63 @@ body{
     font-family: Regular;
 }
 .price-range {
-  color: #282c3f;
-  margin-bottom: 4px;
-  font-size: 14px;
-  font-family: Bold;
+    color: #282c3f;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-family: Bold;
 }
 
 .product-count {
-  color: #7e818c;
-  margin-bottom: 4px;
-  font-size: 12px;
+    color: #7e818c;
+    margin-bottom: 4px;
+    font-size: 12px;
 }
 
 .slider-container {
-  position: relative;
-  height: 50px;
-  width: 70%;
-  margin-left: 25px;
-  margin-top: 82px;
+    position: relative;
+    height: 50px;
+    width: 70%;
+    margin-left: 25px;
+    margin-top: 82px;
 }
 .slider-container::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  height: 20px;
-  width: 20px;
-  background: #fff;
-  border: 2px solid #ff0055;
-  border-radius: 50%;
-  z-index: 3;
- top: 9px;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border: 2px solid #ff0055;
+    border-radius: 50%;
+    z-index: 3;
+    top: 9px;
 }
 input[type=range]{
-  width: 100%;
-  -webkit-appearance: none;
+    width: 100%;
+    -webkit-appearance: none;
   /* background: transparent; */
 }
 
 input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 30px;
-  width: 30px;
-  background: #fff;
-  border: 2px solid #ff0055;
-  border-radius: 50%;
-  cursor: pointer;
-  position: relative;
-  z-index: 2;
-  top: -13px;
+    -webkit-appearance: none;
+    height: 30px;
+    width: 30px;
+    background: #fff;
+    border: 2px solid #ff0055;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    top: -13px;
 }
 
 
 input[type=range]::-webkit-slider-runnable-track {
-  height: 5px;
-  background: linear-gradient(to right, #ff0055 0%, #ff0055 var(--value, 100%), #eee var(--value, 100%), #eee 100%);
-  border-radius: 3px;
+    height: 5px;
+    background: linear-gradient(to right, #ff0055 0%, #ff0055 var(--value, 100%), #eee var(--value, 100%), #eee 100%);
+    border-radius: 3px;
 }
 
 .histo{
@@ -1150,7 +1174,7 @@ input[type=range]::-webkit-slider-runnable-track {
     background-color: #f6f6f6;
 }
 #cartid{
- position: fixed;
+    position: fixed;
     top:0;
     left: 0;
     width: 100%;
@@ -1281,15 +1305,13 @@ input[type=range]::-webkit-slider-runnable-track {
     
 }
 /* .wishedall{
-    
-
     top: 0; 
     width: 100%;
     height: 100%;
     background-color: white;
 } */
 .head-id1{
-     background-color: white;
+    background-color: white;
     position: fixed;
     top: 0;
     z-index: 100;
@@ -1361,8 +1383,10 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 @media screen and (max-width:768px) and (min-width:426px){
 
-    #banner{height: 72px;
-    margin-bottom: 0px;}
+    #banner{
+        height: 72px;
+        margin-bottom: 0px;
+    }
     #banner-txt{
         font-size: 14px;
         margin-top: 5px;
