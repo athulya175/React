@@ -50,7 +50,7 @@ function filterFn(){
                     <li class="clm1flx clm1flxclr"><label id="genfil">Gender</label></li>
                 </div>
                 <div class="clm1tit">
-                    <li class="clm1flx"><label>Categories</label></li>
+                    <li class="clm1flx" id="cat"><label>Categories</label></li>
                 </div>
                 <div class="clm1tit">
                     <li class="clm1flx"><label>Size</label></li>
@@ -610,7 +610,7 @@ function filterFn(){
                             <div class="price-info">
                                 <div class="pricehd">Selected price range</div>
                                     <div class="price-range"><span id="min-price">₹0</span> - <span id="max-price">₹21,000</span></div>
-                                        <div class="product-count"><span id="nopdts">269005 products found</span></div>
+                                        <div class="product-count"><span id="nopdts">269005 </span>products found</div>
                                 </div>
                                 <div class="cont">
                                     <div class="histo">
@@ -762,9 +762,25 @@ function filterFn(){
         const labeltxt=this.querySelector("label").textContent.trim()
         console.log(labeltxt)
 
-            const maxRange = document.getElementById('maxRange');
+        const maxRange = document.getElementById('maxRange');
         const maxPrice = document.getElementById('max-price');
+        const productCount=document.getElementById("nopdts")
 
+
+function getProductCount(price){
+        const maxPrice=21000
+        const maxProducts=269005
+        return Math.floor((price/maxPrice)*maxProducts)
+
+    }
+
+maxRange.addEventListener("input",function(){
+    const currentPrice=parseInt(this.value)        //this is when a user slides the slider the input value will be stored
+    maxPrice.textContent=`₹${currentPrice.toLocaleString()}`
+    const count=getProductCount(currentPrice)
+    productCount.textContent=count.toLocaleString()
+})
+     
 function updateSlider() {
   const val = parseInt(maxRange.value);
   maxPrice.textContent = `₹${val.toLocaleString()}`;
@@ -809,11 +825,12 @@ updateSlider();
      }
     })
     })
-
     const selectcategory=document.querySelector(".sltctry")
     selectcategory.addEventListener("click",function(){
     console.log("clicked")
     filtrpge.querySelector(".categories").style.display="block"
+    
+    
     
     })
 
@@ -926,32 +943,87 @@ setTimeout(() => {
 const redwish=document.getElementById("wished")
 redwish.addEventListener("click",wishlisted)
 
+
+
 function addToCart(){
    const addtocart= document.createElement("div")
    addtocart.id="cartid"
    addtocart.innerHTML=`
    <div class="layout">
-    <div class="cartnav">
-        <div class="bkicon">
-            <img src="icons/arrow_icon.svg" id="img1" />
-        </div>
-            <div class="carthd">SHOPPING BAG</div>
-            <div class="step">STEP 1/3</div>
-        </div>
-        <div class="root">
-        <div id="cartmob">
-        <div id="cartcntmrg">
-            <div class="cart img"><img src="https://constant.myntassets.com/checkout/assets/img/empty-bag.webp"></div>
-        </div>
-        <div class="carttitle">Hey,it feel so light!</div>
-        <div class="cartsubtile">There is nothing in your bag.Let's add some items.</div>
-        <div class="addingcart">
-                <div class="cartbutton">ADD ITEMS FROM WISHLIST</div>
-        </div>
-        </div>
-        </div>
+        <div class="cartnav">
+            <div class="bkicon">
+                <a href="index.html"><img src="icons/arrow_icon.svg" id="arrowimg1" /></a>
+            </div>
+                <div class="carthd">SHOPPING BAG</div>
+                <div class="step">STEP 1/3</div>
+            </div>
+            <div class="root">
+                <div id="cartmob">
+                    <div id="cartcntmrg">
+                        <div class="cartimg"><img src="https://constant.myntassets.com/checkout/assets/img/empty-bag.webp"id="bagimg"></div>
+                    </div>
+                    <div class="carttitle">Hey, it feels so light!</div>
+                    <div class="cartsubtile">There is nothing in your bag. Let's add some items.</div>
+                    <div class="addingcart">
+                        <div class="cartbutton">ADD ITEMS FROM WISHLIST</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     `
-    
+    document.body.appendChild(addtocart)
 }
+const addCart=document.getElementById("cart")
+addCart.parentElement.addEventListener("click",addToCart)
+
+
+
+function WishList(){
+    const Wishedlist=document.createElement("div")
+    Wishedlist.id="wishedid"
+    Wishedlist.innerHTML=`
+    <div class="wishedall">
+    <header id="head-id">
+      <div id="arrow">
+        <a href="index.html">
+          <img src="icons/arrow_icon.svg" id="img1"/>
+        </a>
+      </div>
+      <div id="head-text">
+        <span class="hd-text">Wishlist</span><br />
+        <span class="hd-subtxt">8 items</span>
+      </div>
+      <div id="headicons">
+        <img src="icons/headpls.svg" class="hdicon" />
+         <a href="#"><img src="icons/cart.svg" class="hdicon" id="cart"/></a>
+      </div>
+    </header>
+    <div class="secondprt">
+        <div class="wishlistempty">
+            <div class="wishcnt"> EMPTY</div>
+            <div class="emhd">WISHLIST
+            <div class="emdesc">Save your favorite piceces of clothing in one place.Add now,buy later
+</div>
+    `
+    document.body.appendChild(Wishedlist)
+}
+const wishclk=document.getElementById("wishes")
+
+const hideitems=document.getElementById("items")
+const hidebanner=document.getElementById("banner")
+const hidegetapp=document.getElementById("getapp")
+const hidefilter=document.getElementById("filpd")
+const hideitem=document.getElementById("item")
+function hideList(){
+    hideitems.style.display="none"
+    hidebanner.style.display="none"
+    hidegetapp.style.display="none"
+    hidefilter.style.display="none"
+    hideitem.style.display="none"
+    wishclk.style.display="block"
+}
+wishclk.addEventListener("click",function(){
+    WishList()
+    hideList()
+})

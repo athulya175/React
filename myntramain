@@ -5,3 +5,6 @@ https://www.myntra.com/dresses
 clear:both  --->clear floats
 
 1.2 rem --->root element
+
+parseInt()--->convert string into number and cutss of decimal
+number()------->convert whole numbers and decimals
