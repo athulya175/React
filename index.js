@@ -100,7 +100,7 @@ function filterFn(){
                                     <span class="pdtcount">63995</span>
                                 </label>
                             </li>
-                            <li class="clm2li">
+                            <li class="clm2li" id="ckid">
                                 <label class="cstmcheckbox">
                                     <input type="checkbox" name="clm2fil" value="women"class="chkbox">
                                     <div class="chkboxIndicator"></div>Women
@@ -215,7 +215,7 @@ function filterFn(){
                                     <span class="pdtcount">25</span>
                                 </label>
                             </li>
-                            <li class="clm2li">
+                            <li class="clm2li" id="ckid">
                                 <label class="cstmcheckbox">
                                     <input type="checkbox" name="clm2fil" value="girls"class="chkbox">
                                     <div class="chkboxIndicator"></div>Single styles
@@ -326,7 +326,14 @@ function filterFn(){
                                     <div class="chkboxIndicator"></div>612 ivy league
                                     <span class="pdtcount">1</span>
                                 </label>
-                            </li>    
+                            </li> 
+                            <li class="clm2li">
+                                <label class="cstmcheckbox">
+                                    <input type="checkbox" name="clm2fil" value="girls"class="chkbox">
+                                    <div class="chkboxIndicator"></div>69 fashon street
+                                    <span class="pdtcount">1</span>
+                                </label>
+                            </li>     
                         </div>
                     </ul>
                 </div>
@@ -413,7 +420,7 @@ function filterFn(){
                             </li> 
                             <li class="clm2li">
                                 <label class="cstmcheckbox">
-                                    <input type="checkbox" name="clm2fil" value="girls">
+                                    <input type="checkbox" name="clm2fil" value="girls"class="chkbox">
                                     <div class="chkboxIndicator"></div>Xl
                                     <span class="pdtcount">8755</span>
                                 </label>
@@ -449,7 +456,7 @@ function filterFn(){
                 <div class="clm2">
                     <p class="titles">Refine your search</p>
                     <p class="description">Select any one category to view more filter(s).</p>
-                    <div class="sltctry">SELECT CATEGORY</div>
+                    <div class="sltctry"><span class="sltcat">SELECT CATEGORY</span></div>
                 </div>
             </div>
             <div class="color">
@@ -623,7 +630,7 @@ function filterFn(){
                                 <label class="cstmcheckbox">
                                     <input type="checkbox" name="clm2fil" value="boys"class="chkbox">
                                     <div class="chkboxIndicator"></div>All countries
-                                    <span class="pdtcount">1</span>
+                                    <span class="pdtcount">12576</span>
                                 </label>
                             </li>
                             <li class="clm2li">

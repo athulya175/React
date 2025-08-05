@@ -660,7 +660,7 @@ body{
 }
 .clm2{
     height: 100%;
-    /* padding-right: 12px; */
+    padding-right: 12px;
     width: 66.66%;
     float: left;
 }
@@ -744,6 +744,7 @@ body{
     right: 0;
     font-size: 10px;
     color: #94969f;
+    margin-top: -1px;
 }
 /* .clm1flxclr {
     background: #e06a6a;
@@ -894,6 +895,10 @@ body{
     color: #ff3e6c;
     padding-bottom:8px;
 
+}
+.sltcat{
+    position: relative;
+    top:1px
 }
 .sortpop{
     display: block;
