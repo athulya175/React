@@ -1,5 +1,5 @@
 
-const showpg=document.querySelector(".hdicon").addEventListener("click",function(){
+function showPage(){
     const  shwpge=document.createElement("div")
     shwpge.id="show-id"
     shwpge.innerHTML=`
@@ -9,7 +9,7 @@ const showpg=document.querySelector(".hdicon").addEventListener("click",function
                 <p class="showhd">Use Myntra from Homescreen</p>
                 <div id=newcrt>
                     <div id=showtxt>
-                        <p class="showsub"><img src="https://constant.myntassets.com/pwa/assets/img/9aa9e922-68c5-4da7-aa34-4985dbf8a7c21550128447828-zap-2x.png"class="showimg"><span id="titl1">It's Super Fast</span</p>
+                        <p class="showsub"><img src="https://constant.myntassets.com/pwa/assets/img/9aa9e922-68c5-4da7-aa34-4985dbf8a7c21550128447828-zap-2x.png"class="showimg"><span id="titl1">It's Super Fast</span></p>
                         <p class="showsub"><img src="https://constant.myntassets.com/pwa/assets/img/e753c3fb-f38e-4a8e-a8cd-e2f5c6232d891550134928036-group-18-2x.png"class="showimg"><span id="titl2">Easy To Access</span></p>
                         <p class="showsub"><img src="https://constant.myntassets.com/pwa/assets/img/7e394a90-3fa3-4ad8-b35a-4c202673ddce1550135018275-hard-drive-2x.png"class="showimg"><span id="titl3">Saves Space</span></p>
                     </div>
@@ -27,7 +27,8 @@ const showpg=document.querySelector(".hdicon").addEventListener("click",function
     shwpge.querySelector(".okeybtn").onclick=()=>{
         shwpge.remove()
     }
-})
+}
+const showpg=document.querySelector(".hdicon").addEventListener("click",showPage)
 
 
 const fltr=document.getElementById("fltothr")
@@ -76,7 +77,7 @@ function filterFn(){
                         <li class="clm1flx"><label>Country of Origin</label></li>
                     </div>
                     <div class="clm1tit">
-                        <li class="clm1flx">
+                        <li class="clm1flx" id="fil">
                         <span class="redot"></span>
                         <label>More Filters</label></li>
                     </div>
@@ -737,95 +738,90 @@ function filterFn(){
         </div>
     </div>`
         document.body.appendChild(filtrpge)
-
-
         filtrpge.querySelector(".close_btn").onclick=()=>{
             filtrpge.remove()
         } 
 
         filtrpge.querySelectorAll(".clm1flx").forEach(clm1flx=>{
-        clm1flx.addEventListener('click',function(){
-            document.querySelectorAll(".clm1flx").forEach(x=>x.classList.remove('select'))
-        this.classList.add('select')
-        const labeltxt=this.querySelector("label").textContent.trim()
-        console.log(labeltxt)
+            clm1flx.addEventListener('click',function(){
+                document.querySelectorAll(".clm1flx").forEach(x=>x.classList.remove('select'))
+                this.classList.add('select')
+                const labeltxt=this.querySelector("label").textContent.trim()
+                console.log(labeltxt)
+                const maxRange = document.getElementById('maxRange');
+                const maxPrice = document.getElementById('max-price');
+                const productCount=document.getElementById("nopdts")
 
-        const maxRange = document.getElementById('maxRange');
-        const maxPrice = document.getElementById('max-price');
-        const productCount=document.getElementById("nopdts")
-
-
-function getProductCount(price){
-        const maxPrice=21000
-        const maxProducts=269005
-        return Math.floor((price/maxPrice)*maxProducts)
-
-    }
-
-maxRange.addEventListener("input",function(){
-    const currentPrice=parseInt(this.value)        //this is when a user slides the slider the input value will be stored
-    maxPrice.textContent=`₹${currentPrice.toLocaleString()}`
-    const count=getProductCount(currentPrice)
-    productCount.textContent=count.toLocaleString()
-})
+                function getProductCount(price){
+                    const maxPrice=21000
+                    const maxProducts=269005
+                    return Math.floor((price/maxPrice)*maxProducts)
+                }
+                maxRange.addEventListener("input",function(){
+                    const currentPrice=parseInt(this.value)        //this is when a user slides the slider the input value will be stored
+                    maxPrice.textContent=`₹${currentPrice.toLocaleString()}`
+                    const count=getProductCount(currentPrice)
+                    productCount.textContent=count.toLocaleString()
+                })
      
-function updateSlider() {
-  const val = parseInt(maxRange.value);
-  maxPrice.textContent = `₹${val.toLocaleString()}`;
-  maxRange.style.setProperty('--value', `${(val / maxRange.max) * 100}%`);
-}
+                function updateSlider() {
+                    const val = parseInt(maxRange.value);
+                    maxPrice.textContent = `₹${val.toLocaleString()}`;
+                    maxRange.style.setProperty('--value', `${(val / maxRange.max) * 100}%`);
+                }
 
-maxRange.addEventListener('input', updateSlider);
-updateSlider();
-     filtrpge.querySelectorAll(".gender, .categories,.size,.price,.brand,.discount,.bundles,.country,.filters,.color").forEach(section => {
-    section.style.display = "none";
-    });
+                maxRange.addEventListener('input', updateSlider);
+                updateSlider();
+                filtrpge.querySelectorAll(".gender, .categories,.size,.price,.brand,.discount,.bundles,.country,.filters,.color").forEach(section => {
+                    section.style.display = "none";
+                });
 
-        if(labeltxt==="Categories"){
-        filtrpge.querySelector(".categories").style.display="block"
-     }
-    else if(labeltxt==="Gender"){
-        filtrpge.querySelector(".gender").style.display="block"
-    }
-     else if(labeltxt==="Size"){
-        filtrpge.querySelector(".size").style.display="block"
-     } 
-      else if(labeltxt==="Price"){
-        filtrpge.querySelector(".price").style.display="block"
-     } 
-     else if(labeltxt==="Brand"){
-        filtrpge.querySelector(".brand").style.display="block"
-     }  
-     else if(labeltxt==="Discount Range"){
-        filtrpge.querySelector(".discount").style.display="block"
-     }
-      else if(labeltxt==="Bundles"){
-        filtrpge.querySelector(".bundles").style.display="block"
-     }
-       else if(labeltxt==="Country of Origin"){
-        filtrpge.querySelector(".country").style.display="block"
-     }
-      else if(labeltxt==="Color"){
-        filtrpge.querySelector(".color").style.display="block"
-     }
-      else if(labeltxt==="More Filters"){
-        filtrpge.querySelector(".filters").style.display="block"
-     }
+            if(labeltxt==="Categories"){
+                filtrpge.querySelector(".categories").style.display="block"
+            }
+            else if(labeltxt==="Gender"){
+                filtrpge.querySelector(".gender").style.display="block"
+            }
+            else if(labeltxt==="Size"){
+                filtrpge.querySelector(".size").style.display="block"
+            } 
+            else if(labeltxt==="Price"){
+                filtrpge.querySelector(".price").style.display="block"
+            } 
+            else if(labeltxt==="Brand"){
+                filtrpge.querySelector(".brand").style.display="block"
+            }  
+            else if(labeltxt==="Discount Range"){
+                filtrpge.querySelector(".discount").style.display="block"
+            }
+            else if(labeltxt==="Bundles"){
+                filtrpge.querySelector(".bundles").style.display="block"
+            }
+            else if(labeltxt==="Country of Origin"){
+                filtrpge.querySelector(".country").style.display="block"
+            }
+            else if(labeltxt==="Color"){
+                filtrpge.querySelector(".color").style.display="block"
+            }
+            else if(labeltxt==="More Filters"){
+                filtrpge.querySelector(".filters").style.display="block"
+            }
+        })
     })
-    })
+    const fil =document.getElementById("fil")
+    const cata=document.getElementById("cat")
     const selectcategory=document.querySelector(".sltctry")
     selectcategory.addEventListener("click",function(){
     console.log("clicked")
     filtrpge.querySelector(".categories").style.display="block"
-    
-    
-    
+    cata.classList.add("clm1flxclr")
+    fil.style.background="#f5f5f6"
     })
 
 
- filtrpge.querySelectorAll("#clm1 .clm1flx").forEach(clm1tit => {
-  clm1tit.addEventListener("click", function () {
-    console.log("clk");
+    filtrpge.querySelectorAll("#clm1 .clm1flx").forEach(clm1tit => {
+        clm1tit.addEventListener("click", function () {
+         console.log("clk");
     filtrpge.querySelectorAll("#clm1 .clm1flx").forEach(el => el.classList.remove("clm1flxclr"));
     this.classList.add("clm1flxclr");
   });
@@ -940,7 +936,10 @@ function addToCart(){
    <div class="layout">
         <div class="cartnav">
             <div class="bkicon">
-                <a href="index.html"><img src="icons/arrow_icon.svg" id="arrowimg1" /></a>
+                <a href="#" onclick="if(document.referrer) { window.location = document.referrer; } else { window.location = '/fallback-page.html'; } return false;">
+                 <img src="icons/arrow_icon.svg" id="arrowimg1" />
+                </a>
+
             </div>
                 <div class="carthd">SHOPPING BAG</div>
                 <div class="step">STEP 1/3</div>
@@ -966,119 +965,57 @@ const addCart=document.getElementById("cart")
 addCart.parentElement.addEventListener("click",addToCart)
 
 
-
-function WishList(){
-    const Wishedlist=document.createElement("div")
-    Wishedlist.id="wishedid"
-    Wishedlist.innerHTML=`
-    <div class="wishedall">
-        <header id="head-id1">
-        <div id="arrow">
-            <a href="index.html">
-            <img src="icons/arrow_icon.svg" id="img1"/>
-            </a>
-        </div>
-        <div id="head-text">
-            <span class="hd-text">Wishlist</span><br />
-            <span class="hd-subtxt">8 items</span>
-        </div>
-        <div id="headicons">
-            <img src="icons/headpls.svg" class="hdicon" />
-            <a href="#"><img src="icons/cart.svg" class="hdicon" id="cart"/></a>
-        </div>
-        </header>
-        <div class="secondprt">
-            <div class="wishlistempty">
-                <div class="wishcnt"></div>
-                <div class="emhd">WISHLIST EMPTY</div>
-                <div class="emdesc">Save your favorite piceces of clothing in one place.Add now,buy later</div>
-                <div class="emimg1"></div>
-                <div><a href="#"class="cntshop">CONTINUE SHOPPING<div>
-                <div>
-            </div>
-        </div>
-</div>
-
-
-
-<div class="layout">
-        <div class="cartnav">
-            <div class="bkicon">
-                <a href="index.html"><img src="icons/arrow_icon.svg" id="arrowimg1" /></a>
-            </div>
-                <div class="carthd">SHOPPING BAG</div>
-                <div class="step">STEP 1/3</div>
-            </div>
-            
-        </div>
-    </div>
-
-        <div class="secondprt">
-            <div class="wishlistempty">
-                <div class="wishcnt"></div>
-                <div class="emhd">WISHLIST EMPTY</div>
-                <div class="emdesc">Save your favorite piceces of clothing in one place.Add now,buy later</div>
-                <div class="emimg1"></div>
-                <div><a href="#"class="cntshop">CONTINUE SHOPPING<div>
-                <div>
-            </div>
-        </div>
-
-
-
-
-    `
-    document.body.appendChild(Wishedlist)
-}
-const wishclk=document.getElementById("wishes")
-
-// const hideitems=document.getElementById("items")
-// const hidebanner=document.getElementById("banner")
-// const hidegetapp=document.getElementById("getapp")
-// const hidefilter=document.getElementById("filpd")
-// const hideitem=document.getElementById("item")
-// function hideList(){
-//     hideitems.style.display="none"
-//     hidebanner.style.display="none"
-//     hidegetapp.style.display="none"
-//     hidefilter.style.display="none"
-//     hideitem.style.display="none"
-//     wishclk.style.display="block"
-// }
-wishclk.addEventListener("click",function(){
-    WishList()
-
-})
-
 function addToCart1(){
+    console.log("functioncalled")
    const addtocart= document.createElement("div")
    addtocart.id="cartid"
    addtocart.innerHTML=`
    <div class="layout">
-        <div class="cartnav">
-            <div class="bkicon">
+        <div class="cartnav1">
+            <div class="bkicon1">
                 <a href="index.html"><img src="icons/arrow_icon.svg" id="arrowimg1" /></a>
             </div>
-                <div class="carthd" id="wishhdtxt">Wishlist</div>
-                 <div id="headicons">
+                <div class="carthd1" id="wishhdtxt">Wishlist</div>
+                 <div id="headicons1">
                  
-                    <img src="icons/headpls.svg" class="hdicons" id="plus"/>
-                    <a href="#"><img src="icons/cart.svg" class="hdicons" id="cart"/></a></div>
+                    <img src="icons/headpls.svg" class="hdicons1" id="plus1"/>
+                    <a href="#"><img src="icons/cart.svg" class="hdicons2" id="cart1"/></a></div>
             </div>
             <div class="secondprt">
-            <div class="wishlistempty">
-                <div class="wishcnt"></div>
-                <div class="emhd">WISHLIST EMPTY</div>
-                <div class="emdesc">Save your favorite piceces of clothing in one place.Add now,buy later</div>
-                <div class="emimg1"></div>
-                <div><a href="#"class="cntshop">CONTINUE SHOPPING<div>
-                <div>
+                <div class="wishlistempty">
+                    <div class="container">
+                        <div class="emhd">WISHLIST EMPTY</div>
+                        <div class="emdesc">Save your favorite pieces of clothing in one place. Add now, buy later.</div>
+                        <div class="emimg1"></div>
+                        <div><a href="/"class="cntshop">CONTINUE SHOPPING</a></div>
+                    <div>
+                </div>
             </div>
-        </div>
         </div>
     </div>
     `
     document.body.appendChild(addtocart)
-}
+    const plushow=document.querySelector(".hdicons1").onclick=()=>{
+        showPage()
+        // addtocart.remove()
+    }
+        const cartshow=document.querySelector(".hdicons2").onclick=()=>{
+        
+            addToCart()
+            addtocart.remove()
+            // const toback=document.querySelector(".bkicon").onclick=()=>{
+            //             console.log("clicks")
+
+            //     addToCart()
+            //     to
+            // }
+            
+
+        }
+    }
+
 const wishclkk=document.getElementById("wishes")
 wishclkk.addEventListener("click",addToCart1)
+
+
+
