@@ -9,4 +9,8 @@ clear:both  --->clear floats
 parseInt()--->convert string into number and cutss of decimal
 number()------->convert whole numbers and decimals
 
-doubt-->like continueshopping outline
+doubt-->like continueshopping outline?
+
+To make a container center by using flexbox ---->justify contans center and text align center--->add height 100vh
+
+

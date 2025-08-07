@@ -610,7 +610,7 @@ function filterFn(){
                                 </div>
                             </div>
                             <div class="slider-container">
-                                <input type="range" id="maxRange" min="0" max="21000" step="100" value="21000">
+                                <input type="range" id="maxRange" min="0" max="48000" step="100" value="48000">
                             </div>
                         </div>
                     </div>
@@ -620,13 +620,13 @@ function filterFn(){
         <div class="country">
             <div class="clm2">
                 <div class="searsize">
-                        <div class="seamrg">
-                            <img src="icons/search.svg" id="sizesrchimg">
-                              <input class="srchre" placeholder="Search by Country of Orgin" type="text">
-                        </div>
+                    <div class="seamrg">
+                        <img src="icons/search.svg" id="sizesrchimg">
+                            <input class="srchre" placeholder="Search by Country of Orgin" type="text">
                     </div>
+                </div>
                     <ul class="clm2ul">
-                        <div>
+                        
                             <li class="clm2li">
                                 <label class="cstmcheckbox">
                                     <input type="checkbox" name="clm2fil" value="boys"class="chkbox">
@@ -718,10 +718,10 @@ function filterFn(){
                                     <span class="pdtcount">1</span>
                                 </label>
                             </li>    
-                        </div>
+                        
                     </ul>
-                </div>
             </div>
+        </div>
             <div class="lastnav">
                 <div class="navclm">
                     <div class="navclmcnt">
@@ -735,26 +735,28 @@ function filterFn(){
                     </div>
                 </div>
             </div>
-        </div>
     </div>`
         document.body.appendChild(filtrpge)
         filtrpge.querySelector(".close_btn").onclick=()=>{
             filtrpge.remove()
         } 
-
+        
         filtrpge.querySelectorAll(".clm1flx").forEach(clm1flx=>{
             clm1flx.addEventListener('click',function(){
                 document.querySelectorAll(".clm1flx").forEach(x=>x.classList.remove('select'))
                 this.classList.add('select')
                 const labeltxt=this.querySelector("label").textContent.trim()
                 console.log(labeltxt)
+
+
+
                 const maxRange = document.getElementById('maxRange');
                 const maxPrice = document.getElementById('max-price');
                 const productCount=document.getElementById("nopdts")
 
                 function getProductCount(price){
-                    const maxPrice=21000
-                    const maxProducts=269005
+                    const maxPrice=48000
+                    const maxProducts=269897
                     return Math.floor((price/maxPrice)*maxProducts)
                 }
                 maxRange.addEventListener("input",function(){
@@ -772,6 +774,7 @@ function filterFn(){
 
                 maxRange.addEventListener('input', updateSlider);
                 updateSlider();
+
                 filtrpge.querySelectorAll(".gender, .categories,.size,.price,.brand,.discount,.bundles,.country,.filters,.color").forEach(section => {
                     section.style.display = "none";
                 });
@@ -796,9 +799,13 @@ function filterFn(){
             }
             else if(labeltxt==="Bundles"){
                 filtrpge.querySelector(".bundles").style.display="block"
+                
             }
             else if(labeltxt==="Country of Origin"){
+                
                 filtrpge.querySelector(".country").style.display="block"
+                console.log(document.querySelector(".clm2li"));
+
             }
             else if(labeltxt==="Color"){
                 filtrpge.querySelector(".color").style.display="block"
@@ -907,28 +914,6 @@ sortpge.querySelector(".sorting").onclick=()=>{
 })
 
 
-const wished=document.getElementById("wish")
-function wishlisted(){
-    wished.style.display="block"
-    const box=document.createElement("div")
-    box.id="wishboxid"
-    box.innerHTML=`
-    <div id="wishlistbox" class="wsbox">
-        <div class="wishpop">
-            <p>Product added to wishlist</p>
-        </div>
-    </div>
-    `
-document.body.appendChild(box)
-setTimeout(() => {
-    box.remove()
-}, 2000);
-}
-const redwish=document.getElementById("wished")
-redwish.addEventListener("click",wishlisted)
-
-
-
 function addToCart(){
    const addtocart= document.createElement("div")
    addtocart.id="cartid"
@@ -936,10 +921,7 @@ function addToCart(){
    <div class="layout">
         <div class="cartnav">
             <div class="bkicon">
-                <a href="#" onclick="if(document.referrer) { window.location = document.referrer; } else { window.location = '/fallback-page.html'; } return false;">
-                 <img src="icons/arrow_icon.svg" id="arrowimg1" />
-                </a>
-
+                <a href=""><img src="icons/arrow_icon.svg" id="arrowimg1" /></a>
             </div>
                 <div class="carthd">SHOPPING BAG</div>
                 <div class="step">STEP 1/3</div>
@@ -960,13 +942,15 @@ function addToCart(){
     </div>
     `
     document.body.appendChild(addtocart)
+   const  takefromcart= document.querySelector(".cartbutton")
+   takefromcart.addEventListener("click",addToCart1)
 }
 const addCart=document.getElementById("cart")
 addCart.parentElement.addEventListener("click",addToCart)
 
 
 function addToCart1(){
-    console.log("functioncalled")
+    // console.log("functioncalled")
    const addtocart= document.createElement("div")
    addtocart.id="cartid"
    addtocart.innerHTML=`
@@ -995,27 +979,138 @@ function addToCart1(){
     </div>
     `
     document.body.appendChild(addtocart)
-    const plushow=document.querySelector(".hdicons1").onclick=()=>{
-        showPage()
-        // addtocart.remove()
-    }
+        const plushow=document.querySelector(".hdicons1").onclick=()=>{
+            showPage()
+        }
         const cartshow=document.querySelector(".hdicons2").onclick=()=>{
-        
             addToCart()
             addtocart.remove()
-            // const toback=document.querySelector(".bkicon").onclick=()=>{
-            //             console.log("clicks")
+            const toback=document.querySelector(".bkicon").onclick=()=>{
+                console.log("clicks")
+                addToCart()
+            }
+                
 
-            //     addToCart()
-            //     to
-            // }
-            
-
-        }
     }
+}
 
 const wishclkk=document.getElementById("wishes")
 wishclkk.addEventListener("click",addToCart1)
+
+
+function searchMain(){
+    const mainclass=document.querySelector(".mainclass")
+    mainclass.style.display="none"
+    const searcchdiv=document.createElement("div")
+    searcchdiv.id="searchmid"
+    searcchdiv.innerHTML=`
+    <div class="layout1">
+       <div class="nav">
+            <div class="bkicon1">
+                <a href=""><img src="icons/arrow_icon.svg" id="arrowimg1" /></a>
+            </div>
+            <input type="text" class="searchbar" placeholder="Search for brands & products" autofocus>
+            <div class="searchicon"><img src="icons/redsearch.svg"></div>
+        </div>
+        <div class="secpd">
+            <div class="secprt">
+                <div class="smhd">
+                    <h4 class="smtit">RECENTLY VIEWED</h4>
+                </div>
+            <ul class="smlst">
+                <li>
+                    <div class="smpdt">
+                        <div class="smimg"><img src="//assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/h_373,q_80,w_280/v1/assets/images/2025/FEBRUARY/22/wihJnoil_41c0e86f57f24c9782346e3307b7a7db.jpg"></div>
+                        <div class="smpdtit">BAESD</div>
+                        <div class="smdesc">Fit & Flare Dress</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="smpdt">
+                        <div class="smimg"><img src="//assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/h_373,q_80,w_280/v1/assets/images/23051412/2023/5/6/3969296a-f6ec-46f6-9412-61de6ed5165f1683339346023ClotheFunnWhiteFloralPrintPinaforeDress1.jpg"></div>
+                        <div class="smpdtit">Clothe Funn</div>
+                        <div class="smdesc">Girls Conversational Printed Cotton Pinafore Dress With Top</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="smpdt">
+                        <div class="smimg"><img src="//assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/h_373,q_80,w_280/v1/assets/images/32109331/2024/12/27/d7278d1b-6e27-4d54-9a5b-502a7ab4f0e81735297347279MarksSpencerFloralPrintFitFlareDress1.jpg"></div>
+                        <div class="smpdtit">Marks & Spencer</div>
+                        <div class="smdesc">Floral Printed Cotton Fit & Flare Dress</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="smpdt">
+                        <div class="smimg"><img src="//assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/h_373,q_80,w_280/v1/assets/images/23663558/2023/6/17/fd63bcc5-d06b-4997-83e6-5ec89309cb091686995040121HERENOWNavyBlueFitFlareDress1.jpg"></div>
+                        <div class="smpdtit">HERE&NOW</div>
+                        <div class="smdesc">Girls Navy Blue Floral Embroidered Cotton A-Line Dress</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="smpdt">
+                        <div class="smimg"><img src="//assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/h_373,q_80,w_280/v1/assets/images/28688510/2024/12/27/bb058407-d64c-43dd-a8ae-ac6cba92c7641735308885503-OCTICS-Floral-Printed-Fit--Flare-Dress-1081735308884799-1.jpg"></div>
+                        <div class="smpdtit">OCTICS</div>
+                        <div class="smdesc">Floral Printed fit & Flare Dress</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    `
+    document.body.appendChild(searcchdiv)
+    const cursorActive=document.querySelector(".searchbar")
+    cursorActive.focus();
+
+}
+const navsearch=document.getElementById("navsearch")
+navsearch.addEventListener("click",searchMain)
+
+
+// const wished=document.querySelectorAll(".wish")
+// function wishlisted(){
+//     wished.style.display="block"
+//     redwish.style.display="none"
+//     console.log("red")
+//     const box=document.createElement("div")
+//     box.id="wishboxid"
+//     box.innerHTML=`
+//     <div id="wishlistbox" class="wsbox">
+//         <div class="wishpop">
+//             <p>Product added to wishlist</p>
+//         </div>
+//     </div>
+//     `
+// document.body.appendChild(box)
+// setTimeout(() => {
+//     box.remove()
+// }, 2000);
+// }
+// const redwish=document.querySelectorAll(".wished")
+// redwish.addEventListener("click",wishlisted)
+
+const redwish=document.querySelectorAll(".wished")
+const wished=document.querySelectorAll(".wish")
+redwish.forEach((redwish,index)=>{
+    redwish.addEventListener("click",function(){
+        wished[index].style.display="block"
+        redwish.style.display="none"
+        const box=document.createElement("div")
+        box.id="wishbox"
+        box.innerHTML=`
+        <div id="wishlistbox" class="wsbox">
+            <div class="wishpop">
+                <p>Product added to wishlist</p>
+            </div>
+        </div>
+
+        `
+        document.body.appendChild(box)
+        setTimeout(()=>{
+            box.remove()
+        },2000)
+    })
+})
 
 
 
