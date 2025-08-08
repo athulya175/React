@@ -1604,8 +1604,9 @@ input[type=range]::-webkit-slider-runnable-track {
     display: block;
     font-size: 15px;
     color: #282c3f;
-    font-weight: 700;
-    font-family: Semi;
+    font-weight: 50;
+    font-family: Bold;
+    margin: 0;
 }
 .social{
     color: #696b79;
@@ -1715,10 +1716,24 @@ td{
  }
  .popsr{
     margin: -40px 0 30px;
+    padding: 20px 20px 30px;
  }
  .allabtpd{
     padding:20px 20px 30px;
  }
+ .keep h4{
+    margin-top: 21px;
+    margin-bottom: 4px;
+ }
+.sclsvg{
+    padding-left: 0;
+}
+.custom h4 ,.links h4{
+    padding: 10px 0;
+    margin-top: 10px;
+    font-family: Bold;
+}
+
  @media screen and (max-width:375px){
     #lstimg{
         height: 255px;
@@ -1747,7 +1762,15 @@ td{
     #item{
         height: 343.97px;
     }
-  
+    .sortbtn img{
+        margin-left: -1px;
+    }
+    #res{
+        margin-left: 1px;
+    }
+    .filtbtn img{
+        margin-left: 1px;
+    }
 }
 @media screen and (max-width:768px) and (min-width:426px){
 
@@ -1785,5 +1808,9 @@ td{
     }
 
 }
+
+
+
+
 
 
