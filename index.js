@@ -975,107 +975,106 @@ function addToCart1(){
                 </div>
             </div>
         </div>
-        <div class="about"><p class="aboutxt">More about Online Shopping at Myntra</p><img src="icons/down.svg"></div>
-                    <div class="displays">
-                        <div class="allabout">
-                            <div class="shopfor"> 
-                                <a><h4>SHOP FOR</h4></a>
-                                <a>Explore</a>
-                                <a>Men</a>
-                                <a>Women</a>
-                                <a>Kids</a>
-                                <a>Home & Living</a>
-                            </div>
-                            <div class="shopfor social">
-                                <a><h4>KEEP IN TOUCh</h4></a>
-                                <a href="https://www.facebook.com/myntra"><img src="icons/facebook.svg" class="socialsvg" ></a>
-                                <a href="/home/athulya/Downloads/yt.svg"><img src="icons/tweet.svg" class="socialsvg"></a>
-                                <a href="https://www.instagram.com/myntra/#"><img src="icons/insta.svg" class="socialsvg"></a>
-                                <a href="https://www.youtube.com/user/myntradotcom"><img src="icons/yt.svg" class="socialsvg"></a
-                            </div>
-                            <div class="shopfor custom">
-                                <h4>CUSTOMER POLICIES</h4>
-                                <a href="#">Contact Us</a>
-                                <a href="#">FAQ</a>
-                                <a>href="#">Terms Of Use</a>
-                                <a>href="#">Track Orders</a>
-                                <a>href="#">Shipping</a>
-                                <a> href="#">Cancellation</a>
-                                <a>href="#">Returns</a> 
-                                <a>href="#">Privacy policy<a>
-                                <a>href="#">Grievance Redressal</a>
-                            </div>
-                            <div class="usefullinks">
-                                <a href="#">Blog</a>
-                                <a href="#">Careers</a
-                                <a href="#">Site Map</a>
-                                <a href="#">Corporate Information</a>
-                                <a href="#">Whitehat</a>
-                            </div>
-                            <p class="copyright"><span>© 2025 www.myntra.com</span>
-                            <span class="copyright">All rights reserved</span></p>
-                            <div class="popularsrch">
-                                <div class="poppd">
-                                    <div class="popmrg">
-                                        <h4>POPULAR SEARCH</h4>
-                                        <a href="#">Girls</a>
-                                        <a href="#">Street Fashion</a>
-                                        <a href="#">Fashion Hacks</a>
-                                        <a href="#">Girls Tops</a>
-                                        <a href="#">Biba Girls Dresses</a>
-                                        <a href="#">Jeans For Girls</a>
-                                        <a href="#">Baby</a>
-                                        <a href="#">Dress</a>
-                                        <a href="#">Dresses For Kind</a>
-                                        <a href="#">Boys Shorts</a>
-                                        <a href="#">T Shirt For Girl</a>
-                                        <a href="#">Tshirts For Girls</a>
-                                        <a href="#">Girls Tshirts</a>
-                                        <a href="#">Kids Wear</a>
-                                        <a href="#">Blazer For</a>
-                                        <a href="#">Boys</a>
-                                        <a href="#">Girl Dress</a>
-                                        <a href="#">Jeans Top</a>
-                                        <a href="#">Girls Shrug</a>
-                                        <a href="#">Kids Suits</a>
-                                        <a href="#">Shorts For Girls</a>
-                                        <a href="#">Girl Bra</a>
-                                        <a href="#">Girls Bra</a>
-                                        <a href="#">Sweaters For Girls</a>
-                                        <a href="#">Girls Kurtis</a>
-                                        <a href="#">Girls Swimming Costume</a>
-                                        <a href="#">Girls Scarves</a>
-                                        <a href="#">Tights For Kids</a>
-                                        <a href="#">Adidas White Shoes</a>
-                                        <a href="#">Kids Ethnic Wear</a>
-                                        <a href="#">Boys Jacket</a>
-                                        <a href="#">Baby Frocks Design</a>
-                                        <a href="#">Girls Blazer</a>
-                                        <a href="#">Blazer For Kids</a>
-                                        <a href="#">Kids Shrug</a>
-                                        <a href="#">Frock Design</a>
-                                        <a href="#">Long Coats For Girls</a>
-                                        <a href="#">Party Wear Dress For Boys</a>
-                                        <a href="#">Girls Jacket</a>
-                                        <a href="#">Kids Sweater</a>
-                                        <a href="#">Baby Sweater</a>
-                                        <a href="#">Boys Suits</a>
-                                        <a href="#">Baby Rompers</a>
-                                        <a href="#">Denim Jacket For Girls</a>
-                                        <a href="#">Newborn Baby Dresses</a>
-                                        <a href="#">Girls Kids Wear</a>
-                                        <a href="#">Kids Party Wear</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="buydress">
-                                <h2 class="buytit">BUY DRESS</h2>
-                                <div class="buydesc">
-                                    <h2>Eternally Stylish Dresses</h2>
-                                    <p>whether you are 13 or 30,one thing all women can agree on is that dresses are an essenstial part of our wardrobe.Dresses have a unique appeal that can rarely be recreated by any other outfit.From Vintage Flower dresses to modern bodycon dresses,the styles have varied over the years.</p>
-                                    <p>The history of dresses dates back to centuries ago when they were design with puffy sleeves with crinolines under skirt.Now you can find a variety of dresses from pretty prom dresses to trendy club dresses.Mynthra has Choices galore when it comes to dress for girls and women.Explore the expansive range of women and <a href="#">girls dresses</a>on Myntra from premium brands</p>
-                                </div>
-                            </div>
+        <div class="footer">
+            <div class="about">
+                <p class="aboutxt">More about Online Shopping at Myntra</p><img src="icons/down.svg" class="disarrow">
+            </div>
+            <div class="displays">
+                <div class="allabout">
+                    <div class="allabtpd">
+                        <div class="shopfor"> 
+                            <a href="#" class="shphd">SHOP FOR</a>
+                            <a>Explore</a>
+                            <a>Men</a>
+                            <a>Women</a>
+                            <a>Kids</a>
+                            <a>Home & Living</a>
+                        </div>
+                        <div class="social"><a><h4>KEEP IN TOUCH</h4></a>
+                            <a href="https://www.facebook.com/myntra"><img src="icons/facebook.svg" class="socialsvg" ></a>
+                            <a href="/home/athulya/Downloads/yt.svg"><img src="icons/tweet.svg" class="socialsvg"></a>
+                            <a href="https://www.instagram.com/myntra/#"><img src="icons/insta.svg" class="socialsvg"></a>
+                            <a href="https://www.youtube.com/user/myntradotcom"><img src="icons/yt.svg" class="socialsvg"></a></div>
+                        
+                        <div class="shopfor custom">
+                            <h4>CUSTOMER POLICIES</h4>
+                            <a href="#">Contact Us</a>
+                            <a href="#">FAQ</a>
+                            <a href="#">Terms Of Use</a>
+                            <a href="#">Track Orders</a>
+                            <a href="#">Shipping</a>
+                            <a href="#">Cancellation</a>
+                            <a href="#">Returns</a> 
+                            <a href="#">Privacy policy</a>
+                            <a href="#">Grievance Redressal</a>
+                        </div>
+                        <div class="shopfor">
+                            <h4>useful links</h4>
+                            <a href="#">Blog</a>
+                            <a href="#">Careers</a
+                            <a href="#">Site Map</a>
+                            <a href="#">Corporate Information</a>
+                            <a href="#">Whitehat</a>
+                        </div>
+                        <p class="copyright"><span>© 2025 www.myntra.com</span>
+                        <span class="cpy">All rights reserved</span></p>
+                    </div>
+                        <div class="shopfor">
+                            <div class="poppd">
+                                <div class="shopfor popsr ">
+                                    <div class="social"><h4>POPULAR SEARCHES</h4></div>
+                                    <a href="#">Girls</a>
+                                    <a href="#">Street Fashion</a>
+                                    <a href="#">Fashion Hacks</a>
+                                    <a href="#">Girls Tops</a>
+                                    <a href="#">Biba Girls Dresses</a>
+                                    <a href="#">Jeans For Girls</a>
+                                    <a href="#">Baby</a>
+                                    <a href="#">Dress</a>
+                                    <a href="#">Dresses For Kind</a>
+                                    <a href="#">Boys Shorts</a>
+                                    <a href="#">T Shirt For Girl</a>
+                                    <a href="#">Tshirts For Girls</a>
+                                    <a href="#">Girls Tshirts</a>
+                                    <a href="#">Kids Wear</a>
+                                    <a href="#">Blazer For</a>
+                                    <a href="#">Boys</a>
+                                    <a href="#">Girl Dress</a>
+                                    <a href="#">Jeans Top</a>
+                                    <a href="#">Girls Shrug</a>
+                                    <a href="#">Kids Suits</a>
+                                    <a href="#">Shorts For Girls</a>
+                                    <a href="#">Girl Bra</a>
+                                    <a href="#">Girls Bra</a>
+                                    <a href="#">Sweaters For Girls</a>
+                                    <a href="#">Girls Kurtis</a>
+                                    <a href="#">Girls Swimming Costume</a>
+                                    <a href="#">Girls Scarves</a>
+                                    <a href="#">Tights For Kids</a>
+                                    <a href="#">Adidas White Shoes</a>
+                                    <a href="#">Kids Ethnic Wear</a>
+                                    <a href="#">Boys Jacket</a>
+                                    <a href="#">Baby Frocks Design</a>
+                                    <a href="#">Girls Blazer</a>
+                                    <a href="#">Blazer For Kids</a>
+                                    <a href="#">Kids Shrug</a>
+                                    <a href="#">Frock Design</a>
+                                    <a href="#">Long Coats For Girls</a>
+                                    <a href="#">Party Wear Dress For Boys</a>
+                                    <a href="#">Girls Jacket</a>
+                                    <a href="#">Kids Sweater</a>
+                                    <a href="#">Baby Sweater</a>
+                                    <a href="#">Boys Suits</a>
+                                    <a href="#">Baby Rompers</a>
+                                    <a href="#">Denim Jacket For Girls</a>
+                                    <a href="#">Newborn Baby Dresses</a>
+                                    <a href="#">Girls Kids Wear</a>
+                                    <div class="buyall">
+                        <h2 class="buytit">BUY DRESS</h2>
+                        <div class="buydesc">
+                            <h2>Eternally Stylish Dresses</h2>
+                            <p>whether you are 13 or 30,one thing all women can agree on is that dresses are an essenstial part of our wardrobe.Dresses have a unique appeal that can rarely be recreated by any other outfit.From Vintage Flower dresses to modern bodycon dresses,the styles have varied over the years.</p>
+                            <p>The history of dresses dates back to centuries ago when they were design with puffy sleeves with crinolines under skirt.Now you can find a variety of dresses from pretty prom dresses to trendy club dresses.Mynthra has Choices galore when it comes to dress for girls and women.Explore the expansive range of women and <a href="#">girls dresses</a>on Myntra from premium brands</p>
                             <h3>Types of dresses</h3>
                             <p>There is a dress for every occasion and season.Listed below are some of the popular types of dresses categoriesed based on different occasions.</p>
                             <li><strong>CASUAL DRESSES</strong>Want to feel chic and pretty without putting in too much effort?Then swap out your jeans and t-shirt for a casual dress.Dresses in cotton are perfect for everyday wear.For casual wear,choose from t-shirt style,shirt style,fit and flare,and blouson dressses.</li>
@@ -1133,10 +1132,9 @@ function addToCart1(){
                                 <h3>CAN FORMAL DRESSES BE WORN FOR AN OFFICE PRESENTATION/INTERVIEW</h3>
                                 <div class="formaldesc">Formal dresses are styled for corporate wear and very much in vogue.They display and Understand elegance and are perfect for any formal event such as an interview,meeting with clients or an official presentation.<div>
                             </div>
-                            </div>
-                                <div class="reception">
-                                    <h3>CAN FORMAL DRESSES BE WORN FOR AN OFFICE PRESENTATION/INTERVIEW</h3>
-                                    <div class="recdesc">Mynthra has a curated range of dresses for the party as well as wedding receptions.The focus is to create the perfect balance between modern and traditional.maxi dress,A-line,empire and kurthi dress with embellishments,ethnic motofs or embroidery are popular choices in the reception wear range</div>
+                            <div class="reception">
+                                <h3>CAN FORMAL DRESSES BE WORN FOR AN OFFICE PRESENTATION/INTERVIEW</h3>
+                                <div class="recdesc">Mynthra has a curated range of dresses for the party as well as wedding receptions.The focus is to create the perfect balance between modern and traditional.maxi dress,A-line,empire and kurthi dress with embellishments,ethnic motofs or embroidery are popular choices in the reception wear range</div>
                             </div>
                             <div classs="style">
                                 <h3>HOW CAN WE STYLE DRESES?</h3>
@@ -1189,9 +1187,28 @@ function addToCart1(){
                                     <td><a href="#">Kaftan Dresses</a></td>
                                 </tr>
                             </table>
-    </div>
+                                
+                        </div>    
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>
+        
     `
     document.body.appendChild(addtocart)
+        const allabout=document.querySelector(".allabout")
+        const disarrow=document.querySelector(".disarrow")
+        disarrow.onclick=()=>{
+            disarrow.classList.toggle("rotate")
+            if(allabout.style.display==="block"){
+                allabout.style.display="none"
+            }else{
+                allabout.style.display="block"
+            }
+        }
         const plushow=document.querySelector(".hdicons1").onclick=()=>{
             showPage()
         }
@@ -1324,6 +1341,5 @@ redwish.forEach((redwish,index)=>{
         },2000)
     })
 })
-
 
 

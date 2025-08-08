@@ -1202,6 +1202,8 @@ input[type=range]::-webkit-slider-runnable-track {
     height: 100%;
     background-color: white;
     z-index: 999;
+    padding-top: 56px;
+    overflow-y: scroll;
   
     
 }
@@ -1332,8 +1334,12 @@ input[type=range]::-webkit-slider-runnable-track {
     background-color: white;
 } */
  .cartnav1{
-   
+    width: 100%;
+        background: #fff;
        box-shadow: 0 1px 2px 0 rgba(148, 150, 159, .3);
+       position: fixed;
+       top: 0;
+       display: block;
     
 
  }
@@ -1365,12 +1371,12 @@ input[type=range]::-webkit-slider-runnable-track {
     vertical-align: top;
     height: 20px;
     width: 20px;
-    margin: 17px 16px 16px 0;
+    margin: 17px 16px 0px 0;
 }
 #cart1{
     width: 24px;
     height: 24px;
-    margin:  16px 16px 16px 0;
+    margin:  16px 16px 0px 0;
     display: inline-block;
 }
 .wishlistempty{
@@ -1471,9 +1477,13 @@ input[type=range]::-webkit-slider-runnable-track {
     min-height: 29px;
     background: #fff;
 }
+/* .secondprt{
+    height: 100vw;
+    overflow-y: scroll; */
+/* } */
 .secpd{
     background-color: #f5f5f6;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     padding-top: 71px;
     padding-left: 0;
 }
@@ -1555,13 +1565,37 @@ input[type=range]::-webkit-slider-runnable-track {
     text-overflow: ellipsis;
 }
 .allabout{
-    padding: 20px 20px 30px;
+    display: none;
+    padding: 0px 0px 30px;
     background: #f5f5f6;
 }
 .shopfor{
     color: #696b79;
     font-size: 15px;
     line-height: 1.7;
+} 
+.shopfor>a{
+    text-decoration: none;
+    color: #3e4152;
+    font-size: 13px;
+    text-align: left;
+    line-height: 1.7;
+    font-family: Regular;
+}
+.shphd{
+    display: block;
+    font-size: 15px !important;
+    color: #282c3f;
+    font-family: Bold !important;
+   
+}
+.shphd::after{
+    content: "" !important;
+}
+.shopfor>a::after{
+    content: "|";
+    color: #3e4152;
+    margin: 10px 5px;
 }
 .shopfor h4{
     text-decoration: none;
@@ -1573,22 +1607,17 @@ input[type=range]::-webkit-slider-runnable-track {
     font-weight: 700;
     font-family: Semi;
 }
-.shopfor>a::after{
-    color: #3e4152;
-    margin: 10px 5px;
-}
-.shopfor a{
-    text-decoration: none;
-    color: #3e4152;
-    font-size: 13px;
-    text-align: left;
+.social{
+    color: #696b79;
+    font-size: 15px;
     line-height: 1.7;
 }
 .social h4{
-    margin-top: 25px;
+    margin: 25px 0 0;
     font-size: 14px;
     color: #282c3f;
-    font-weight: 700;
+    font-family: Bold;
+    font-weight: 50;
 }
 .socialsvg{
     padding-left: 0px;
@@ -1597,17 +1626,99 @@ input[type=range]::-webkit-slider-runnable-track {
     padding: 15px;
     display: inline-block;
 }
-.custom h4{
+.social>h4{
     font-size: 15px;
     color: #282c3f;
     padding: 10px 0;
-    font-weight: 700;
+    font-family: Semi;
     margin: 10px 0 0;
+    font-weight: 700;
     text-align: left;
 }
-.custom a{
+.social a{
+    text-decoration: none;
+    color: #3e4152;
+    font-size: 13px;
+    text-align: left;
+    line-height: 1.7;
+}
+
+.copyright{
+    color: #94969f;
+    font-size: 9px;
+    margin: 20px 0 0;
+}
+.cpy{
+    float: right;
+}
+.buyall{
+    padding: 20px;
+    color: #94969f;
+    font-size: 13px;
+    margin: 0 -20px;
+    border-top: 1px solid #eaeaec;
+}
+.buytit{
+    font-family: Bold;
+    color: #94969f;
+    font-size: 13px;
+    line-height: 1.7;
+}
+.buydesc{
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 20px 0;
+    color: #94969f;
+}
+.buydesc p{
+    margin-bottom: 20px;
+}
+table{
+    font-family: arial,sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td{
+    border: 2px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+.about{
+    color: #3e4152;
+    padding: 10px 18px;
+    padding-top: 557px;
+   
+}
+.aboutxt{
+    line-height: 24px;
+    font-size: 13px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 85%;
+    font-family: Bold;
+    display: inline;
+}
+.about img{
+   float: right;
+    position: relative;
     
 }
+/* .disarrow ::after{
+    transform: rotate(180deg);
+}
+.disarrow::before{
+    transform: rotate(90deg);
+} */
+ .disarrow.rotate{
+    transform: rotate(180deg);
+ }
+ .popsr{
+    margin: -40px 0 30px;
+ }
+ .allabtpd{
+    padding:20px 20px 30px;
+ }
  @media screen and (max-width:375px){
     #lstimg{
         height: 255px;
