@@ -1705,12 +1705,12 @@ td{
     position: relative;
     
 }
-.disarrow ::after{
+/* .disarrow ::after{
     transform: rotate(180deg);
 }
 .disarrow::before{
     transform: rotate(90deg);
-}
+} */
  .disarrow.rotate{
     transform: rotate(180deg);
  }
@@ -1808,6 +1808,7 @@ td{
     }
 
 }
+
 
 
 
