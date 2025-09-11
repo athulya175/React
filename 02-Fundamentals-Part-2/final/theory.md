@@ -102,7 +102,6 @@ block elements such as heading and forms,create their own linw and occupy the fu
 
 # with out box-sizing border box the total width of the form would be the sum of width,padding and border,which cause layout issues.with border-ox the total width remains specifies.
 
-
 // ternary operator
 we can add  third variable also,
 
