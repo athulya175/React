@@ -114,3 +114,14 @@ we can add  third variable also,
 
     let shoulddrive=hasDriversLicence && hasGoodVision && !isTired
     console.log("y",shoulddrive)
+
+//Dom Manupulation
+    * Structured Representaion of HTML Documents.Allows Javascript to acces html elements and style to manipulate them
+    * The DOM is automatically created by the browser as soon as the html page loads.it stores in the tree structure
+    * In this tree,each html element is represent  as one object
+    * DOM is a complete reperesnentation of html document
+
+    * DOM is not part of the js language,then it works as ,the DOM and DOM methods are actually part of something called Web APIs.
+    web APIs are libraries that browesers implement and that we can access from our js code
+
+# refactoring code means to avoid duplicate code and use DRY(dont repeat your self)
