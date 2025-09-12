@@ -154,8 +154,83 @@ we can add  third variable also,
 
 =>User resets game->Set all scores to 0->set player 1 as starting player
 
+# How Js works Behind the scenes
+    * Topics
+        1)High leve;
+        2)garbage-collected (removes unused element)
+        3)intepreted or just-in-time compiled
+        4)Multi-paradigm(oop,pop,functional program(FP)) js-oop
+        5)Prototype-based object-oriented
+        6)First-class functions (functions are treated as variables)
+        7)Dynamic (no ned to declare type of variables)
+        8)Single-threaded
+        9)Non-blocking event loop
+  concurrency model:how the Js engine handles multiple tasks happening at the same time.--->
+  # (why do we need that) 
+  --->Js runs in one single thread,so it can only do one thing at a time.--->
+  # (so what about a long-running task?)
+  --->Sounds like it would block the single thread.However,we want non-blocking behaviour!--->
+  # (How do we achieve that?)
+  --->By using an event loop:takes long running tasks,executes them in the "Background",and push them back in the main thread once they are finished.
 
--------------------------------------------------------------------
+  # Js Engine Program that Executes Javascript code.Ex->v8
+        Js engine contains 2 parts Call Stack and Heap
+        * call stack is where our code is executed by using an Exexution context.
+        * heap where objects are stored
+
+# Compilation V/S Interpretation 
+as we know the every program needs to be converted into machine  code for that converstion can happen using compilation or interpretation
+
+    # Compilation:Entire code is converted into machine code at once,and written to a binary file that can be executed by computer.
+
+
+    Source code =>(step1->compilation)=>Portable file:machinecode=>(step 2:Execution)->Program running
+
+            the machine code is written into a portable file that can be executed by any computer.
+    # Interpretation:Interpreter runs through the source code and executes it line by line
+
+    Source Code=>(step1:Execution line by line)
+
+    # Just in time(JIT)compilation:ENtire code is converted into machine code at once,then executed immediately
+    
+    Source code=>(step1:compilation)->Machine code(step2:Execution)->Program running
+
+            here there is no portable file like compilation
+java script is not really an interpretted language  insted of simple intereption js engine now mix b/w compilation and interpretation thats called JIT.
+
+# How JavaScript Engine Works
+    when a js code enter to js engine the first step is parsing(reading the code) on parsing the code passed to to a DS called abstract syntax tree,it split each line of code to meaning full parts and combine them it check all the syntax error.the result tree is used to generate machine code.  the tree has nothing to do with DOM,the tree is just a representation of our entire code inside the engine.The  next step is compilation,which takes generated Ast and compiles into machine code,the machine code gets execution right away  because morder js use JIT.Execution happens in JS engines call stack,
+
+# RunTime in the browser
+    js container is nothing but let consider it as a box and it includeevrything needed to use JS,its the heart of js engine.
+    To work properly we also need web Api  they provided to engine but are not part of js language its self.js acces these api through "window" object.It still makes sense that web APIs are part of the runtime because the runtime is the container that holds all JavaScript-related components. and aslo a js runtime include callback queue.
+# how js code execute
+    After compilation the nxt phase is execution here a global execution context is created.The topevel code refers to codethat is not inside any function.that is only this code outside of the functions will be executed.because fn should only executedd when they called
+
+# what is an execution Context?
+    # Globaal execution contex
+        An execution context is an abstract concept that can be defined as an environment in which a piece of js code is executed.It is like a box that stores all necessary information for some code to run,such as local variables or arguments passed into a function.
+            Js code always runs inside an execution context
+
+# The Global Execution Context
+    there is only one global execution context.it always exists as the default context and where top-level code executes
+
+# Hoisting in js
+        Execution context
+        * Variable environment
+        * Scope chain
+        * this keyword
+    Makes some type of variables accessiblle/usable in the code before they are actually declare."variables lifted to top of their scope
+
+    actually code is scanned for variable declaration and for each variable, anew property is created in the variable environment object.
+
+    function declarations -->Hoisted  -->get actual function -->blockScoped
+    var variables tion expression--> hoisted-->get undefined-->function scope
+    let and const variable-->not hoisted--> <uninitialiized>(Temporal Dead Zone(TDZ))-->block scoped
+    function expression and arrow--> Defends if using var or let/const
+   # Why TDZ 
+        makes it easier to avoid and catch errors:accessing variables before declaration is a bad practice and should be avoided. 
+----------------------------------------------------------------------   
 # chat gpt
    # variables and data types
      * let const var
@@ -171,5 +246,7 @@ we can add  third variable also,
     * Ternary condition? value1 : value2
 
    # control Flow
+
+
    
 
