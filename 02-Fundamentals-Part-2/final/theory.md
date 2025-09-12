@@ -125,3 +125,51 @@ we can add  third variable also,
     web APIs are libraries that browesers implement and that we can access from our js code
 
 # refactoring code means to avoid duplicate code and use DRY(dont repeat your self)
+
+# we use. only on selector time only like document.queryselecttor,all....
+
+# when we define a function and call it inside the eventlistner we dont need to use " ()" simple give the name only
+        const closeModal=function(){
+            modal.classList.add('hidden')
+            overlay.classList.add('hidden')
+        }
+    closebBtn.addEventListener("click",closeModal)
+
+#  key Events
+   * keydown: fired as soon as we press down a key.(for all buttons)
+    * keypress :fired continuously we keep our finger on a key(doesn't fire like shift,Esc,arroe...)
+    * Keyup:fired when we lift our finger off the key(not at pressing time fires at releasing time)
+
+# If we needd to get which key is pressed just pass a argument inside that fn usually we pass "e" but its not compalusry
+    document.addEventListener('keydown',function(e){
+         console.log(e)
+    })
+
+        in the params "e" we get a key and that key is the button which we pressed so we can accces the key to identify hich key was pressed
+
+# working of pig game:
+=> user rolls dice->Generate a random dice roll->Display dice roll->if its 1->switch to nxt player-> if its not 1->Add dice rool to current score-> Display new Score
+
+=>User hols score->Add current score to toal score->if score>=100->currentplayer wins->else switch player
+
+=>User resets game->Set all scores to 0->set player 1 as starting player
+
+
+-------------------------------------------------------------------
+# chat gpt
+   # variables and data types
+     * let const var
+     * let = can change
+     * const = constant
+     * var  = old way
+     => for about var, var is function scoped not block scoped that is if it declare inside a function we can't take it out side the function, but if we declare inside a block then that variable is not scoped only that block it can acces out side the block also. and also hoisted that is we use var variable before declaration it don't show error instedd simply says undefined
+   # Operators
+    * Arithmetic + - * / % **
+    * Assignment = += -=
+    * Comparision == === != !== > < <= => 
+    * Logical && || !
+    * Ternary condition? value1 : value2
+
+   # control Flow
+   
+
