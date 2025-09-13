@@ -69,3 +69,6 @@ console.log(y===window.y)
 console.log(z===window.z)
 // if we declare var here we get the property of x in the window (type window in console)
 // here only true value is only the first one because the 1st one is declared as var
+
+
+
