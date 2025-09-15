@@ -305,4 +305,61 @@ but there are some expectation case also like a long string will store in the he
  */
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//
+/*
+//Object References in practice(shallow v/s deep copies)
+    const jessica={
+        firstName:'Jessica',
+        lastName:'williams',
+        age:27
+    }
+    function marryPersom(person,newLastName){
+        person.lastName=newLastName
+        return person
+    }
+    const marriedJessica=marryPersom(jessica,'David')// even after that if we change one of them it will change the other one also
+
+    console.log('Before',jessica)
+    console.log('After',marriedJessica)
+
+
+
+    // to make changes without affecting each other
+    const jessica2={
+        firstName:'Jessica',
+        lastName:'williams',
+        age:27,
+        family:['Alice','Bob']
+    }
+    // by using spread operator we are creating a new object and that's change will not affect the other one because its a new one
+    //shallow copy/clone
+    const jessicaCopy={...jessica2}
+    jessicaCopy.lastName='Davis'
+    console.log(jessica2,jessicaCopy)
+
+    jessicaCopy.family.push("Mary")
+    jessicaCopy.family.push("John")
+    // as here we can see the both are same console thats because,before we see that the new object is just refering the object so change made one's will effect to other also
+    console.log("Before",jessica2)
+    console.log("After",jessicaCopy)
+
+    //Deep copy/Clone
+    const jessicaClone=structuredClone(jessica2)
+    jessicaClone.family.push('Tezia')
+    jessicaClone.family.push('Liz')
+    console.log("BEFORE",jessica2)
+    console.log("AFTER",jessicaClone)
+    // when  we modify the family array inside jesicaCopy by adding the extra family members and when we log jessicacopy we can see the added menbers also inside  it,its unexpected because we thought they are independ(because of shallow copy)
+    //This happends because the spread operator only copies the first level properties,.the family property is an array which is an object its self,so only reference to the array is copies,not the array itself.
+    //that is both jessicaCopy and jessica2 have their family property pointing the same array in the heap.This is called shalllow copy,where only the first level is copiies,but nested objects are shared.
+    // to avoid that we can use deepCloaning --->insted od spread operator use structuredClone
+*/
+
+//Memory Management and Garbage collection
+// how is m/y freed up after we no longer need a value?
+    // 1) CALL STACK(Variables environment is simply de;leted when EC (execution context)pops off stack)
+    // 2) Garbage collection(Centeral m/y tool)
+    //  Mark and Sweep algorithm(a garbage collection algorithm)
+    // The first pjase is mark that is marking the all reachable objects from the root,roots are the starting points of the algorithm.Objects reachable from thse root are also consider alive,The second phase is sweeping phase where all unmarked objects are deleted.
+    // and globaly declared are not cleaned by garbage collector
+    // Memory lwak:WHen objects that are no longer needed are incorrectly still reachable,and therefore not begin garbage collected
+    
