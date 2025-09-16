@@ -363,3 +363,7 @@ but there are some expectation case also like a long string will store in the he
     // and globaly declared are not cleaned by garbage collector
     // Memory lwak:WHen objects that are no longer needed are incorrectly still reachable,and therefore not begin garbage collected
     
+
+
+
+
