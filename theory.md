@@ -248,5 +248,9 @@ java script is not really an interpretted language  insted of simple intereption
    # control Flow
 
 
-   
+
+# THE "OR" OPERATOR IS USEFUL FOR SETTING DEFAULT VALUES,WHILE THE "AND" OPERATOR CAN BE USED TO EXECUTE CODE CONDITIONALLY BASEDD ON THE FIRST OPERAND
+
+
+# if we need to assign a value to a variable that is already defined,so that has a value that is currently truthy then we can use nullish assignemnt operator(&&=)
 
