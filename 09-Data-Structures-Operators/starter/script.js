@@ -68,7 +68,7 @@ const restaurant = {
       close:22,
     },
     fri:{
-      open:11,
+      open:14,
       close:24,
     },
     sat:{
@@ -272,6 +272,7 @@ restaurant.orderPizza && restaurant.orderPizza("mushroom","spinach") // what it 
 // THE "OR" OPERATOR IS USEFUL FOR SETTING DEFAULT VALUES,WHILE THE "AND" OPERATOR CAN BE USED TO EXECUTE CODE CONDITIONALLY BASEDD ON THE FIRST OPERAND
 
 // The  Nullish coalescing Operator(??)
+//It returns the right-hand side value if the left-hand side is either null or undefined.Otherwise, it returns the left-hand side value.
 //-----------------------------------------
 
 
@@ -332,81 +333,6 @@ console.log(rest2)
 
 
 //---------------------------------------------------------------------------------------------------------------
-console.log("---------------------------CHALLENGE-----------------------------")
-
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 11.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
-
-// const players1=game.players[0]
-// const players2=game.players[1]
-// hv
-const [players1,players2]=game.players
-console.log(players1)
-console.log(players2)
-
-// const [gk,...fieldplayer]=game.players[0]
-//hv
-const[gk,...fieldplayer]=players1
-console.log("goalkeeper:",gk,"otherplayers",fieldplayer)
-
-const allPlayers=[players1,...players2]
-console.log(allPlayers)
-
-const players1Final=['Thiago,"Countinho','Perisic',...players1]
-console.log(players1Final)
-
-const{odds:{team1,x:draw,team2}}=game
-
-
-const printGoals=function(...players){
-  console.log(`${players.length} goals were scored`) // nothing but number of players
-}
-printGoals('Davis','Muller','Lewandowski','Kimmich')
-printGoals('Davies','Muller')
-printGoals(game.scored) // the o/p will be one even the score are 4 because they are at in a single array which means params are a single one so we use spread operator  to spread them
-printGoals(...game.scored)
-
-team1<team2 &&console.log("Team 1 is more likely to win")
-team1>team2&&console.log("Team 2 is more likely to win")
-
 
 //--------------------Looping arrays:THE FOR_OF_LOOP----------------
 console.log("--------------------Looping arrays:THE FOR_OF_LOOP----------------")
@@ -434,14 +360,28 @@ for(const[i,el] of mainMenu.entries()){
 //Es6 introduced  three ways to make it easier to write object literal
 
 // 1) ----Property Shorthand
+// 2)-----Method shorthand
+// 3)-----Computer property Name(the third enhancement is the ability to compute property names insted of writing theme out mannually.compute means to calculat)
+const weekdays1=['mon','tue','wed','thus','fri','sat','sun'] 
 
-const restaurantShort = {
-    name: 'Classico Italiano',
-    location: 'Via Angelo Tavanti 23, Firenze, Italy',
-    categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-   openingHours:{
+//for 3rd way
+const openingHours1={
+    [weekdays[3]]:{
+      open:12,
+      close:22,
+    },
+    [weekdays[4]]:{
+      open:11,
+      close:24,
+    },
+    [`days-${2+4}`]:{             //we  can give like this also
+      open:0,  //Open 24 hours
+      close:24,
+    }
+   };
+/*
+  //for 1st way
+  const openingHours1={
     thu:{
       open:12,
       close:22,
@@ -454,8 +394,20 @@ const restaurantShort = {
       open:0,  //Open 24 hours
       close:24,
     }
-   },
-   order:function(starterIndex,mainIndex){
+   };
+*/
+const restaurantShort = {
+    name: 'Classico Italiano',
+    location: 'Via Angelo Tavanti 23, Firenze, Italy',
+    categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  //Es6 enchanced object literals
+    openingHours1,
+   // order:function(starterIndex,mainIndex){
+   // return [this.starterMenu[starterIndex],this.mainMenu[mainIndex]]
+
+   order(starterIndex,mainIndex){
     return [this.starterMenu[starterIndex],this.mainMenu[mainIndex]]
    },
    orderDelivery :function({starterIndex=1,mainIndex=1,time='22:30',address}){ // simply setting default values
@@ -480,4 +432,296 @@ const restaurantShort = {
     console.log(othering)
    }
   };
-  //  taking the openingHours outside 
+  // for 1st taking the openingHours outside 
+  // for 2nd changing the "order" function
+  // for  3rd created a array named weekdays
+
+
+  //-----------------------------------Optional chaining(?.)-------------------------------------------------------------
+
+  console.log("<----------------------------Optional chaining(?.)------------------------------->")
+   
+  
+  //It lets you safely access nested properties of an object without throwing an error if something is null or undefined.
+ // console.log(restaurant.openingHours.mon.open) // (SITUATION-1)this will cause error as can't read undefined property
+
+ // to avoid the above error we can do it like this
+  if(restaurant.openingHours&&restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open)
+// here if opening hour or the nxt value thats when open if any of them is not exist instedd of throwing error it won't show anything
+
+// for like this situation(SITUATION-1) Es6 introduced optional chaining that is if certiain property doesnot exist,then undefined is returned immediately
+
+// with optional chaining
+console.log(restaurant.openingHours.mon?.open)
+// this is how it works if the left side of question exist  then it will read the right side "open" if the left side doesn't exist it immediatly return undefined
+// if its zero it will print zero
+
+//example 
+
+const days=['mon','tue','wed','thu','fri','sat','sun'] 
+for(const day of days){
+  // console.log(day)
+  // const opens=restaurant.openingHours[day]?.open// here we using a variable(day) as property so it must be with in "[]"
+  // seting default value for when its not opened
+  const opens=restaurant.openingHours[day]?.open??"closed"// adds a nullish operator because we need it to open at "0" thats saturday on 24 hours
+  console.log(`On ${day},we open at ${opens}`) // here which are not opened must be undefined so we sets a default value
+
+}
+
+//optional chaining for methods
+console.log(restaurant.order?.(0,1)??"Method does not exist")
+console.log(restaurant.fakeMethod??"Method doesn't exist")
+
+// optional chaining on arrrays
+const users=[{name:"Jonas",email:"hello@gmail.com"}]
+console.log(users[0]?.name??"user array empty")
+
+
+//-------------------LOOPING OBJECTS:Object keys,values,and entries--------------
+
+//consoling the name from the opening hours(names from an objector keys of object)
+
+const properties=Object.keys(openingHours)
+console.log(properties)
+
+let str1=`we opens for ${properties.length} days`
+console.log(str1)
+for(const day of Object.keys(openingHours)){
+  console.log(day)
+}
+for(const day of properties){
+  str1+=`${day},`
+}
+console.log(str1)
+
+//property values
+const values=Object.values(openingHours)
+console.log(values)
+
+//**that is if we give object.key then the o/p be the name of object and if Object.value -->it returns the value of the object */
+
+//Entire object
+const entries=Object.entries(openingHours)
+console.log(entries)
+
+for(const [key,{open,close}] of entries){
+  console.log(`on ${key} we open at ${open} and close at ${close}` )
+}
+
+
+
+//-------------------------SETS-----------------------
+// set is a collection of unique values.
+
+const ordersSet=new Set(["pasta","pizza","pasta","resotto","pasta"])
+console.log(ordersSet)
+console.log(new Set('jonass '))  // returns the letters without duplications
+
+console.log(ordersSet.size) // return the length
+console.log(ordersSet.has('pizza'))// return true if it exists in the set
+console.log(ordersSet.has("bread"))
+
+ordersSet.add("garlic Bread")// to add a value to the set
+ordersSet.add("garlic Bread")// if we add the same value it will not duplicate
+console.log(ordersSet)
+
+ordersSet.delete("pizza") // to delete a value in the set
+console.log(ordersSet)
+
+// ordersSet.clear()// to remove the entire array
+// console.log(ordersSet)
+// retrive data from  a data is not in set all we have to know is is a value is in the set or not
+
+//since set are itreble so wee can loop them
+for( const x of ordersSet){
+  console.log(x)
+}
+
+//use case
+  //example
+
+  const staff=['waiter','chef','waiter','manager','waiter','chef']
+  const staffUnique=new Set(staff)
+  console.log(staffUnique)
+  // what if we need this staffUnique as an array
+  const unique=[...staffUnique]
+  console.log(unique)
+
+  //--------------- new opearations to make sets  usefull
+
+  const italianFoods = new Set([
+  'pasta',
+  'gnocchi',
+  'tomatoes',
+  'olive oil',
+  'garlic',
+  'basil',
+]);
+
+const mexicanFoods = new Set([
+  'tortillas',
+  'beans',
+  'rice',
+  'tomatoes',
+  'avocado',
+  'garlic',
+]);
+
+// 1) intersection method
+
+const commonFood=italianFoods.intersection(mexicanFoods)
+//const commonFood=[...italianFoods.intersection(mexicanFoods)] // if we need a array instedd of set
+console.log("intersection",commonFood)
+
+// 2) Uninon method
+
+const unionFood=italianFoods.union(mexicanFoods)
+console.log("union",unionFood)
+
+// nothing but a normal way to combine without using union
+const combine=new Set([...italianFoods,...mexicanFoods])
+console.log(combine)
+
+// 3)Difference method(which is present in 1st and not in 2nd)
+const uniqueItalianFoods=italianFoods.difference(mexicanFoods)
+console.log(uniqueItalianFoods)
+
+
+const uniqueMexicanFoods=mexicanFoods.difference(italianFoods)
+console.log(uniqueMexicanFoods)
+
+// 4) Symmetric difference (returns the both unique one that is which are unique inmexican food and unique in italian food,that means  eliminating the values whicch are common)
+ 
+const SymmetricFood=italianFoods.symmetricDifference(mexicanFoods)
+console.log(SymmetricFood)
+
+//the other 3 methods are to check relationShip:isSubsetOf,isSupersetOf,isDisjointFrom, and these method returns  a boolean
+//5) isDisjointFrom (check wheather two sets are completly diffrent or not)
+
+console.log(italianFoods.isDisjointFrom(mexicanFoods))
+
+
+//--------------Maps:fundamental
+
+// in map datastructure we can use to map values to key,just like object data is stored in key-value pairs in maps.the main difference is in map,the key can have any type(objects,array or other maps),and this can be huge,in objects they are basically "string"
+
+// 1)set method()
+const rest=new Map()
+rest.set('name','Classico Italiano') // here the set is similar to add method in set both are used to adds values
+rest.set(1,'Firenze,Italy')// just think rest has 2 location 1 is firenze at italy and ither is at down
+console.log(rest.set(2,'Lisbon,portugal'))
+
+// as we know set method has 2 property key and value that key can have any data type
+//calling set method not only update the map but also returns the map.this allows us to chain the set method
+rest.set('categories',['italian','Pizzeria','Vegetarian','Organic'])
+.set('open',11)
+.set('close',23)
+.set(true,'we are open')
+.set(false,'we are closed')
+
+// reading data from map
+// to read data from map we use the get method
+// pass the key as argument(inside quotes execpt boolean)
+
+// 2) get method()
+console.log(rest.get('name'))
+console.log(rest.get(true))
+
+
+// const time=`${new Date().getHours()}:${new Date().getMinutes()}`
+// console.log(time)  // we use new here because it hold methods other wise we can't get method we need get minutes...methods.
+
+
+const time=8
+console.log(time>rest.get('open')&&time<rest.get('close'))// that is we are asking our time is b/w the opening and closing time
+
+// 3) check method
+console.log(rest.has('categories'))
+rest.delete(2)
+// rest.clear()
+console.log(rest)//2,'Lisbon,portugal') was deleted
+
+console.log(rest.size)
+
+// we can also use arrays or object as map keys
+// rest.set([1,2],'Test')
+// console.log(rest)
+
+// retreiving data from the newly created array[1,2]."Test"
+//console.log(rest.get([1,2])) // it return undefined so 1st we assign the key to a variable and then use that
+
+const arr2=[1,2]
+rest.set(arr2,"Test")
+console.log(rest)
+
+console.log(rest.get(arr2))
+
+// using DOM element as a key
+rest.set(document.querySelector('h1'),"heading")
+console.log(rest)
+
+// ----------------------map iteration------------------------
+
+// in above we 1st created a empty map and then addes the elements using the set method.so without using the "set" repeatly.
+//we created a map with a question and options and the correct one and 2 messages for right and wrong
+const question=new Map([
+  ['question','What is the best programming language in the world?'],
+  [1,'C'],
+  [2,'Java'],
+  [3,'JavaScript'],
+  ['correct',3],
+  [true,'Correct'],
+  [false,'Try again']
+])
+
+console.log(question)
+console.log(Object.entries(openingHours)) // when we call like this we get similar o/p like the console question(map).so that means converting objects to map is very simpler
+// converting object to map
+const hoursMap=new Map(Object.entries(openingHours))
+console.log(hoursMap)  //n before that opening hourse is like object now it is a map
+
+//Quiz App
+  console.log(question.get('question'))
+  // iterating through maps
+  for(const [key,value]of question){ // destructure key and values
+    if(typeof key==='number')
+      console.log(`Answers ${key}:${value}`)
+  }
+  // reading values from user
+  const userval=prompt("type your option")
+  console.log(userval)
+  
+ let  ans=question.get('correct')
+console.log(userval==ans?question.get(true):question.get(false))
+
+//converting map to array
+console.log("Array",[...question])
+
+// ------------------------------Which data structure to use?------------------
+/**
+    source of data 
+    1)From program itself
+    2)From ui
+    3)From external source(Api)
+
+    choosing b/w DS
+    for simple list use --->arrays or set
+    for key value pairs -->objects
+
+    use array,
+     when needs  to store value in order
+    value may contain duplicates
+    array provide many useful methods
+
+
+    use sets,
+    require unique value only
+    high performance is important as operations like searching or deteling items can 10X faster than array
+    a common use case is removing duplicate values from an array.
+    
+    objects and maps are used for key-value pair:maps offer better performance and flexibility with key types
+    Objects are prefferd when using functions as value(methods) and when working  with JSON
+
+ */
+// nxt challenge #3 127

@@ -254,3 +254,20 @@ java script is not really an interpretted language  insted of simple intereption
 
 # if we need to assign a value to a variable that is already defined,so that has a value that is currently truthy then we can use nullish assignemnt operator(&&=)
 
+
+✅ How closures work in JavaScript
+
+When a function is created, JavaScript doesn’t just store its code.
+It also stores a link to the lexical environment (the variables that were in scope at the time of creation).
+
+When the outer function finishes, its execution context is popped off the call stack.
+Normally, that would destroy its variables.
+
+But if an inner function was returned (or still referenced somewhere), JavaScript notices:
+
+“Wait, this function still needs those variables.”
+
+So instead of deleting them, the JS engine keeps them alive in memory, inside a hidden “closure object.”
+
+Every time you call the inner function, it accesses those preserved variables through that hidden reference.
+
