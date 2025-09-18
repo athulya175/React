@@ -168,5 +168,46 @@ booker()
         console.log(a*2)
     }
  }
- g() // here g has already
- f()
+ const h=function(){
+    const b=777;
+    f=function(){
+        console.log(b*2)
+    }
+ }
+ g() // here g has already ends its execution
+ f() //but after that we calls f still it get acces to the variable that is declared in "g"
+ h()
+// Re-assigned f by h
+f()
+console.dir(f) // here we can see that inside the scope the value is 777 not 23 any more
+// so it really is true that a clousure always make sure that a function does not lose the connection to the variables that were present at its birthplace. in our case function was born at g and then it reborn at h.
+
+
+//Example 2
+
+const boardPassengers=function(n,wait){
+    // const perGroup=n/3
+    setTimeout(function(){
+        console.log(`We are now boarding all ${n} passengers`)
+        console.log(`There are 3 groups,each with ${perGroup} passengers`)
+    },wait*1000)
+    console.log(`will start boarding in ${wait} seconds`)
+}
+const perGroup=1000// we can also add perGroup as globally
+boardPassengers(180,3);
+
+
+
+//----------------challege-----------
+
+(function(){
+    const header=document.querySelector('h1')
+    header.style.color="red"
+    document.querySelector('body').addEventListener('click',function(){
+        header.style.color='blue'
+    })
+})()
+
+
+
+

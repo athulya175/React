@@ -271,7 +271,7 @@ restaurant.orderPizza && restaurant.orderPizza("mushroom","spinach") // what it 
 
 // THE "OR" OPERATOR IS USEFUL FOR SETTING DEFAULT VALUES,WHILE THE "AND" OPERATOR CAN BE USED TO EXECUTE CODE CONDITIONALLY BASEDD ON THE FIRST OPERAND
 
-// The  Nullish coalescing Operator(??)
+//---------------------------------- The  Nullish coalescing Operator(??)
 //It returns the right-hand side value if the left-hand side is either null or undefined.Otherwise, it returns the left-hand side value.
 //-----------------------------------------
 
@@ -348,7 +348,6 @@ for(const item of mainMenu.entries()){
   console.log(`${item[0]+1}:${item[1]}`)
 }
 // the same above code can write much better way using array destructure
-
 for(const[i,el] of mainMenu.entries()){
   console.log(`${i+1}:${el}`)
 }
@@ -437,7 +436,7 @@ const restaurantShort = {
   // for  3rd created a array named weekdays
 
 
-  //-----------------------------------Optional chaining(?.)-------------------------------------------------------------
+  //----------------------------------- chaining(?.)-------------------------------------------------------------
 
   console.log("<----------------------------Optional chaining(?.)------------------------------->")
    
@@ -725,3 +724,8 @@ console.log("Array",[...question])
 
  */
 // nxt challenge #3 127
+
+
+
+
+

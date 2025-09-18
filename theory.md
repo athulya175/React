@@ -271,3 +271,143 @@ So instead of deleting them, the JS engine keeps them alive in memory, inside a 
 
 Every time you call the inner function, it accesses those preserved variables through that hidden reference.
 
+# example of call back
+
+A callback is a function you pass as an argument to another function, to be “called back” later.
+
+Purpose → handle async tasks (like fetching data, timers, event listeners), or allow flexible code.
+
+
+function greet(name, callback) {
+  console.log("Hello, " + name);
+  callback(); // calling back
+}
+
+greet("Athulya", function() {
+  console.log("Welcome to JavaScript!");
+});
+
+# example of clousure
+A closure is when a function “remembers” variables from its outer scope, even after that outer function has finished.
+
+Purpose → data privacy, stateful functions, encapsulation.
+
+
+function outer() {
+  let counter = 0;
+
+  return function inner() {
+    counter++;
+    console.log(counter);
+  };
+}
+
+const fn = outer();
+fn(); // 1
+fn(); // 2
+
+🌱 Beginner (Foundations)
+
+These are the basics every developer must know:
+
+Variables & Constants → var, let, const, scoping.
+
+Data Types → string, number, boolean, null, undefined, bigint, symbol.
+
+Operators → arithmetic, comparison, logical, assignment, ternary.
+
+Type Conversion & Coercion.
+
+Strings → template literals, string methods.
+
+Control Structures → if-else, switch, loops (for, while, do-while, for...of, for...in).
+
+Functions → function declaration, expression, arrow functions, default parameters.
+
+🌿 Intermediate (Core Concepts)
+
+Where most interview questions start coming from:
+
+Arrays → creation, methods (map, filter, reduce, find, findIndex, some, every, sort, flat, flatMap).
+
+Objects → properties, methods, this, object destructuring, spread/rest.
+
+Destructuring → arrays & objects.
+
+ES6 Features → template literals, destructuring, spread/rest, default params, let/const, arrow functions.
+
+DOM Manipulation → querySelector, events, event bubbling/capturing, delegation.
+
+Event Loop → call stack, Web APIs, callback queue, microtasks.
+
+Closures (very important in interviews).
+
+Hoisting → functions & variables.
+
+Scope → global, function, block, lexical scope.
+
+Strict Mode.
+
+🌳 Advanced Topics
+
+These separate beginners from advanced developers:
+
+Prototypes & Inheritance → prototype chain, Object.create.
+
+Classes & OOP → ES6 classes, constructor, extends, super.
+
+this keyword → rules, arrow vs normal function.
+
+Asynchronous JS
+
+Callbacks
+
+Promises (.then, .catch, .finally)
+
+async/await
+
+Error handling
+
+Fetch API / AJAX / JSON.
+
+Modules (ES Modules & CommonJS) → import, export.
+
+Error Handling → try...catch, custom errors.
+
+Set, Map, WeakSet, WeakMap.
+
+Optional Chaining (?.) & Nullish Coalescing (??).
+
+Symbol & Iterators / Generators.
+
+Event Loop in depth → macro/micro tasks (common interview question).
+
+Memory management & Garbage collection (basic understanding).
+
+🌲 Expert-Level (Less common but strong to know)
+
+Currying & Higher-Order Functions.
+
+Debouncing & Throttling.
+
+Design Patterns in JS → Singleton, Factory, Observer, Module, etc.
+
+Functional Programming concepts → immutability, pure functions.
+
+Deep Dive into this, call, apply, bind.
+
+Custom implementation questions → polyfills for map, filter, bind.
+
+EventEmitter / Pub-Sub pattern.
+
+Web Storage → localStorage, sessionStorage, cookies.
+
+JavaScript Engines → how V8 works, JIT compilation, memory heap & call stack.
+
+⚡ Pro Tip for Interviews:
+
+Be very strong in Closures, Event Loop, Promises/async-await, this, Prototypes, Array methods — these are the most asked.
+
+Then know DOM, fetch, classes, ES6 features.
+
+Finally, revise advanced topics if time permits.
