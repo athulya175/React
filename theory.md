@@ -417,3 +417,118 @@ Finally, revise advanced topics if time permits.
  document.addEventListener('keydown',function(e){
   console.log(e)
  })
+
+
+ //-----------------------------------OOPs------------------------------
+ Sure! Let’s simplify all of that into easy-to-understand points.
+
+---
+
+### **What is Object-Oriented Programming (OOP)?**
+
+OOP is a way of writing code using **objects**. Objects are like real-world things—they have:
+
+* **Data** → called **properties** (e.g., name, age, email)
+* **Actions** → called **methods** (e.g., login, sendMessage)
+
+Think of an object as a little self-contained block that holds both information and what it can do with that information.
+
+---
+
+### **Why OOP?**
+
+Before OOP, code was messy, scattered, and hard to manage (often called **spaghetti code**).
+
+OOP organizes code into objects, making it:
+
+* Easier to maintain
+* Reusable
+* Less buggy
+
+---
+
+### **Classes and Objects**
+
+* A **class** is like a blueprint (like a house plan). It defines what an object will look like and what it can do.
+* An **object** is an instance of a class (like a real house built from a blueprint).
+
+Example:
+
+* **Class:** `User` → has properties like `username` and methods like `login()`
+* **Object:** `john` → username = "John123", can use the `login()` method
+
+---
+
+### **Four Main Principles of OOP**
+
+1. **Abstraction** → Hiding unnecessary details.
+
+   * Example: You don’t need to know how your phone works internally, just press buttons and it works.
+   * In code: You don’t always need all details of an object—only what’s important.
+
+2. **Encapsulation** → Keeping some data private inside an object.
+
+   * Example: A user’s password is private and cannot be changed directly from outside.
+   * This prevents accidental mistakes and keeps code safe.
+
+3. **Inheritance** → Reusing code from one class in another.
+
+   * Example: `Admin` class can inherit everything from `User` class, but also have extra abilities.
+   * This avoids repeating the same code again and again.
+
+4. **Polymorphism** → Same action can work differently for different objects.
+
+   * Example: Both `Admin` and `Author` classes have a `login()` method, but each can work in its own way.
+   * Means “many forms” → same method, different behavior.
+
+---
+
+### **Key Points to Remember**
+
+* OOP = objects with data and actions
+* **Class** = blueprint
+* **Object** = instance of a class
+* Four principles: **Abstraction, Encapsulation, Inheritance, Polymorphism**
+* Helps organize code, avoid duplication, and make programs easier to maintain
+
+---
+
+OOP in JavaScript – Simplified
+
+JavaScript does Object-Oriented Programming differently than classical OOP:
+
+Classes and Instances in JS
+
+A class is like a blueprint.
+
+An object (instance) is a real thing made from that blueprint.
+
+Even though JavaScript has classes (ES6), under the hood it uses prototypes.
+
+Prototypal Inheritance
+
+Every object in JavaScript has a prototype.
+
+The prototype has methods and properties that the object can use.
+
+This is called prototypal inheritance or delegation.
+
+Example:
+
+const nums = [1, 2, 3];
+nums.map(n => n * 2);
+
+
+The map method works because nums delegates to Array.prototype, which has the map method.
+
+The method is not on the array itself but on its prototype.
+
+Three Ways to Create Objects / Implement OOP in JS
+
+
+
+| Method                    | How It Works                                        | Notes                                        |
+| ------------------------- | --------------------------------------------------- | -------------------------------------------- |
+| **Constructor Functions** | Old-school way to create objects and set prototypes | Used in JavaScript before ES6                |
+| **ES6 Classes**           | Modern syntax for OOP                               | “Syntactic sugar” over constructor functions |
+| **Object.create()**       | Directly links a new object to a prototype          | Simple but less common                       |
