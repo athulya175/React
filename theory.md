@@ -411,3 +411,9 @@ Be very strong in Closures, Event Loop, Promises/async-await, this, Prototypes, 
 Then know DOM, fetch, classes, ES6 features.
 
 Finally, revise advanced topics if time permits.
+
+
+# To know ehich key is pressed
+ document.addEventListener('keydown',function(e){
+  console.log(e)
+ })

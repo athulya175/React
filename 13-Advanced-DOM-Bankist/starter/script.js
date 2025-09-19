@@ -212,6 +212,219 @@ tabsContainer.addEventListener('click',function(e){
 */
 // to make that we use closest
   const clicked=e.target.closest(".operations__tab")
-  console.log(clicked)
+  console.log(clicked)//now when we clicks the button the it logs the button and also when we click the span(text/number) we get the button, that in prev-> we says that closest is really help full in event deligation this is a case of that
+  // and now when we click the container where it includes the text and buttons then the result will be error  because of no parent class so we basically ignore any click that happen on that area.(Guard clause)
+  if(!clicked) return  //(return  null insted of error) normaly we write if(clicked)clicked.classList.add('operations__tab--active) its a traditional way
+  tabs.forEach(t=>t.classList.remove('operations__tab--active'))// removes the active class from all
+  clicked.classList.add('operations__tab--active')
+
+  // content area
+  console.log(clicked.dataset.tab)
+  tabsContent.forEach(t=>t.classList.remove('operations__content--active'))
+  document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active') // know why dataset is used because "Every HTML element has a dataset property (a DOMStringMap object),automatically collects all attributes that start with data-.,The part after data- becomes a property of dataset. dataset.tab → special DOM API, gives you the value of the data-tab attribute ("1")."
 })
 
+//--------------------------------------------------passing Argument to Event handlers
+//hover at nav 
+
+
+  // now we are not simply adding event listner insted of we adds delegation for that first we need the parent class, here links parent class is "nav__links" but need the logo too so we neeed to be add the "nav" as class name.this is done because of bubblish
+  const nav=document.querySelector('.nav')
+/*
+  nav.addEventListener('mouseover',function(e){//Previously, we used the mouseenter event, which is similar, but mouseenter does not bubble. Here, we need the event to bubble so it can reach the navigation element, so we use mouseover.
+    if(e.target.classList.contains('nav__link')){
+      // here as like buttons there is no child class that we accedently click so thats why we dont need to use "closest"
+      const clickedLink=e.target
+      // now we need to select all the siblings/ all the other links so we done it by accesing from its parent here parent is "nav__item" and it contains only the liks
+      // inste of doing manually like one or two steps,we can simply search for a parent which matches a certain query
+      const sibLinks=clickedLink.closest('.nav').querySelectorAll('.nav__link')
+      const logo=clickedLink.closest('.nav').querySelector('img')
+      sibLinks.forEach(sib=>{
+      if(sib!==clickedLink)sib.style.opacity=0.5
+    })
+    logo.style.opacity=0.5
+    }
+  }) 
+  nav.addEventListener('mouseout',function(e){  
+    if(e.target.classList.contains('nav__link')){
+      const clickedLink=e.target
+      const sibLinks=clickedLink.closest('.nav').querySelectorAll('.nav__link')
+      const logo=clickedLink.closest('.nav').querySelector('img')
+      sibLinks.forEach(sib=>{
+      if(sib!==clickedLink)sib.style.opacity=1
+    })
+    logo.style.opacity=1
+    }
+  }) 
+*/
+
+
+
+// now it works but the problem is code is not dry anymore we can give that inside a fn and simply call the function at both place
+
+// const handleHover=function(e,opacity){
+ const handleHover=function(e){ // no need to pass params one real params is enough
+  if(e.target.classList.contains('nav__link')){
+    const clickedLink=e.target
+    const sibLinks=clickedLink.closest('.nav').querySelectorAll('.nav__link')
+    const logo=clickedLink.closest('.nav').querySelector('img')
+    sibLinks.forEach(sib=>{
+    // if(sib!==clickedLink)sib.style.opacity=opacity
+    if(sib!==clickedLink)sib.style.opacity=this// using binding
+  })
+  logo.style.opacity=1
+  }
+}
+
+/*
+  nav.addEventListener('mouseover',function(e){
+    handleHover(e,0.5)
+  })
+  nav.addEventListener('mouseout',function(e){
+    handleHover(e,1)
+  })
+*/
+// here inside a function we are calllng another function we can make that to look more efficent by using binding
+nav.addEventListener('mouseover',handleHover.bind(0.5))
+nav.addEventListener('mouseout',handleHover.bind(1))
+
+
+//---------------------------------Building a slider component------------------------
+
+const slides=document.querySelectorAll('.slide')
+const btnLeft=document.querySelector(".slider__btn--left")
+const btnRight=document.querySelector(".slider__btn--right")
+const slider=document.querySelector('.slider')
+let currSlide=0
+const maxSlide=slides.length
+console.log(slides)
+const dotContainer=document.querySelector('.dots')
+// dry princle applying
+const goToSlide=function(slide){
+  slides.forEach((s, i)=>s.style.transform=`translateX(${100*(i-slide)}%)`)
+}
+
+/* applying dry principle for 1st slide
+  slides.forEach((s, i)=>s.style.transform=`translateX(${100*i}%)`) // the 100*i means at index 0 it should be 0 at index  1 it should be 100.....
+  // so the position of slides will be goes like 1st,2nd,3rd.. as--->0%,100%,200%,300%...
+*/
+//----------for first slide
+goToSlide(0)
+
+
+// highlight the dot when clicks
+const activeDot=function(slide){
+  document.querySelectorAll(".dots__dot").forEach(dot=>
+    dot.classList.remove('dots__dot--active'))
+    document.querySelector(`.dots__dot[data-slide="${slide}"]`).classList.add('dots__dot--active')
+  }
+
+
+//we can create
+  //next slide a function for nxtslides also we can apply that on both buttons
+ 
+  //----------------next slide 
+  const nextslide=function(){
+    if(currSlide===maxSlide-1){
+      currSlide=0
+    }
+    else{
+       currSlide++
+    }
+      goToSlide(currSlide)
+      activeDot(currSlide)
+  }
+/*  
+  btnRight.addEventListener('click',function(){
+      // the active one has 0% and prev-->-100 and nxt -100
+      if(currSlide===maxSlide-1){
+        currSlide=0
+      }
+      else{
+        
+          currSlide++
+      }
+         // applying dry
+            // slides.forEach((s, i)=>s.style.transform=`translateX(${100*(i-currSlide)}%)`)
+            // now we want the access as -100%,0%,200%
+        
+        goToSlide(currSlide)
+
+    
+  })
+*/
+//-----------prevslide
+const prevSlide=function(){
+  if(currSlide===0){
+    currSlide=maxSlide-1  //currentslide is not zero based
+  }else{
+    currSlide--
+  }
+  
+  goToSlide(currSlide)
+  activeDot(currSlide)
+}
+
+
+
+// --------------------button of slider
+ btnRight.addEventListener('click',nextslide)
+ btnLeft.addEventListener('click',prevSlide)
+
+
+ // ---------------attaching a keyborad event key left and key right 
+
+ document.addEventListener('keydown',function(e){
+  console.log(e)
+  if(e.key=="ArrowLeft") prevSlide()
+    if(e.key=="ArrowRight") nextslide()
+ })
+
+
+// ------------------when clicking dots the page has to be changed
+// creating button
+const createDot=function(){
+  slides.forEach(function(_,i){// here we use under score because we only needd index no needd of slide
+  dotContainer.insertAdjacentHTML('beforeend',
+    `<button class="dots__dot" data-slide="${i}"></button>`
+  )
+}
+  )}
+createDot()
+
+
+//here also we are using event delegation for dot clicking so we use the parent element insted of each dots
+dotContainer.addEventListener('click',function(e){
+  if(e.target.classList.contains('dots__dot')){
+    currSlide=Number(e.target.dataset.slide)
+    console.log(currSlide)
+    goToSlide(currSlide)
+    activeDot(currSlide)
+  }
+})
+
+ activeDot(0) // by default 1st slide selected
+
+
+ ///Lifecyle DOM Event
+
+ //DOM content loaded Event
+
+ document.addEventListener('DOMContentLoaded',function(e){
+  console.log('HTML parsed and Dom tree build',e)
+ })
+ //This event is fired by the document as soon as the HTML is completely parsed. This means the HTML has been downloaded and converted to the DOM tree. All scripts must be downloaded and executed before the DOMContentLoaded event can occur.
+ // but we dont need to pass our entire code into a eventhandler like "DOMContentLoaded".because we put our scipt tag last of the html so after html loads then only the scrip starts.
+
+
+ window.addEventListener('load',function(e){
+  console.log('page fully loaded',e)
+ })
+ //The load event is fired by the window as soon as not only the HTML is parsed, but also all images and external resources like CSS files are loaded. This event fires when the complete page has finished loading.
+
+ window.addEventListener('beforeunload',function(e){
+  // in some broweser preventDefault is required
+  e.preventDefault()
+  e.returnValue=''
+ })
+ //The beforeunload event is also fired on the window. This event is created immediately before a user is about to leave a page, for example, after clicking the close button in the browser tab. It can be used to ask users if they are sure they want to leave the page.
