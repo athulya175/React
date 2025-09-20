@@ -428,3 +428,14 @@ dotContainer.addEventListener('click',function(e){
   e.returnValue=''
  })
  //The beforeunload event is also fired on the window. This event is created immediately before a user is about to leave a page, for example, after clicking the close button in the browser tab. It can be used to ask users if they are sure they want to leave the page.
+
+
+
+
+
+
+
+
+
+
+
