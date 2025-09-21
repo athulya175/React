@@ -517,33 +517,46 @@ jayis.introduce()
 //Types of class Fields-->Public fields,Private fields,Public methods,Private methods
 
 class Account{
+    // public fields
     locale=navigator.language; // this is how we make locale variable public(; is importand and also no need of  "this",or declaration),just need is the name of the variable and the value
     bank="Banklist"
+
+    //private field
     #movments=[]  // now we protect it from out side at the bottom we get error now because now movements is protected.
+    #pin; // the pin is came from the params that mean its depend upon the data inside the fn so 1st we need to dclare it using # snd then normally
     constructor(owner,currency,pin){ // like previous we are not adding the all methods here movements is an empty array  if an account is empty, so for that we dont need to pass movements as arguments
         this.owner=owner
         this.currency=currency
-        this.pin=pin
+        this.#pin=pin  //needs the new declaration here
         // this.movments=[]
         // this.locale=navigator.language
         console.log(`thanks for opening an account,${owner}`)
     }
-    // public interface
+    // public interface(Api)/public methods
     deposit(val){
-        this.#movments.push(val)
+         this.#movments.push(val) 
+         return this
     }
     withdraw(val){
-        this.deposit(-val)
+         this.deposit(-val)
+         return this
     }
-    approveLoad(val){
+    // privte method
+    #approveLoad(val){
         return  true
     }
     requestLoan(val){
-        if( this.approveLoad(val)){
+        if( this.#approveLoad(val)){
             this.deposit(val)
             console.log(`loan approved`)
         }
+        return this
     }
+    getMovements(){
+        //non chainable:retruns movement array not object
+        return this.#movments;
+    }
+
 }
 const acc1=new Account('Jonas','EUR',111,[])
     console.log(acc1)
@@ -551,5 +564,14 @@ const acc1=new Account('Jonas','EUR',111,[])
     acc1.withdraw(100)
     acc1.movments=[] // here some one adds 300 and then withdraw 100 and after that set movments to an empty array,thats never happens..(so that we neeeds to be set movments into an empty array)
 // after setting # for movment the when we use acc1.movments=[] there create a new movment array
+// so now movements cant changed from out side
+//acc1.#approveLoad(323)//it returns error cause its a private method
+
+//-------------------------Chanining Method-------------------------------
+// for making method chain posssible 1st we need to return all the nmethods
+//To enable chaining, each method that should be chainable must return the object itself (this). This way, after each method call, the result is still the object, allowing the next method to be called on it.
+// non chainable methods are used at the end of the chain
+const methChain=acc1 .deposit(3000).withdraw(1000).withdraw(50).requestLoan(2500).getMovements()
+console.log(methChain)
 
 
